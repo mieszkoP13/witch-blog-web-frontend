@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
-import GoogleLoginButton from "./GoogleLoginButton";
+import GoogleLoginButton from "../components/GoogleLoginButton"
 import './SignUp.css'
 
 const RE_USER = /^\S{3,}$/
