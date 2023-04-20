@@ -4,10 +4,18 @@ import GoogleLoginButton from "../components/GoogleLoginButton";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
+  const [token, setToken] = useState(null);
+
   useEffect(() => {
     const getData = () => {
-      const params = new URLSearchParams(window.location.search);
-      const token = params.get("token");
+      setToken(localStorage.getItem("token"));
+      if (!token) {
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get("token");
+        localStorage.setItem("token", query);
+        setToken(query);
+      }
+
       if (token) {
         axios
           .get(`https://witchblog.azurewebsites.net/api/v1/users/me`, {
@@ -22,7 +30,13 @@ const Profile = () => {
       }
     };
     getData();
-  }, []);
+  }, [token]);
+
+  const logOut = () => {
+    localStorage.removeItem("token");
+    window.location.href = "http://localhost:3000/users/profile";
+  };
+
   return (
     <div>
       {profile ? (
@@ -31,11 +45,11 @@ const Profile = () => {
           <p>Email: {profile.email}</p>
           <p>First Name: {profile.firstName}</p>
           <p>Last Name: {profile.lastName}</p>
+          <button onClick={logOut}>Log out</button>
         </>
       ) : (
         <GoogleLoginButton />
       )}
-      ;
     </div>
   );
 };
