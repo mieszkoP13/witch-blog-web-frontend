@@ -1,19 +1,11 @@
 import React from "react";
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
 function GoogleLoginButton() {
-  const responseMessage = (response) => {
-    console.log(response.credential);
-  };
-  const errorMessage = (error) => {
-    console.log(error);
-  };
   return (
-    <div>
-      <GoogleOAuthProvider clientId="429132861636-62lavmogejm6vklnr2cqfuf8phenco28.apps.googleusercontent.com">
-        <GoogleLogin onSuccess={responseMessage} onError={errorMessage} />
-      </GoogleOAuthProvider>
-    </div>
+    <a href="https://witchblog.azurewebsites.net/oauth2/authorize/google?redirect_uri=http://localhost:3000/users/profile">
+      <button>Sign in with Google </button>
+    </a>
   );
 }
+
 export default GoogleLoginButton;
