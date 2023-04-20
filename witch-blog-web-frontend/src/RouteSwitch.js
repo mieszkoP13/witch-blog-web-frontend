@@ -4,10 +4,12 @@ import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn";
 import Home from "./pages/Home";
+import NavBar from "./components/NavBar";
 
 const RouteSwitch = () => {
   return (
     <BrowserRouter>
+      <NavBar/>
       <Routes>
       <Route path="/" element={<Home />} />
         <Route path="/SignUp" element={<SignUp />} />

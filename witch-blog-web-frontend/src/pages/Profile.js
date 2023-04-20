@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import GoogleLoginButton from "../components/GoogleLoginButton";
+import './Profile.css'
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -39,7 +40,7 @@ const Profile = () => {
   };
 
   return (
-    <div>
+    <div className="wrap-profile">
       {profile ? (
         <>
           <h3>User Logged in</h3>

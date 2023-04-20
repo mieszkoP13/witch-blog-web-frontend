@@ -1,0 +1,12 @@
+.wrap-profile {
+    height: 300px;
+    width: 380px;
+    display: block;
+    background-color: aliceblue;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -150px 0 0 -190px;
+    box-shadow: 2px -2px 6px black;
+    padding: 30px;
+}

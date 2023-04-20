@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+    background-color: #1e1d23;
+    font-size: 24px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    z-index: 9;
+    padding-top: 10px;
+    position: absolute;
+    width: 100vw;
+    height: 70px;
+    right: 0;
+    list-style: none;
+    background-color: rgb(255, 255, 255);
+    transition: transform 0s;
+}
+
+nav a {
+    display: block;
+    padding: 10px 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #8d8d8d;
+}
+
+.burger {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    font-size: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    transition: transform .3s;
+}
+
+.fa-bars {
+    color: #fff;
+}
+
+.fa-times {
+    color: #333;
+}
+
+.active {
+    transform: translateX(-350px)
+}
+
+.hide {
+    display: none;
+}
+
+/* tablets and desktop */
+@media only screen and (min-width: 768px) {}
+
+/* phones */
+@media only screen and (max-width: 767px) {
+    .burger {
+        display: block;
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px 20px;
+        font-size: 36px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        transition: transform .3s;
+    }
+
+    nav ul {
+        display: block;
+        flex-direction: column;
+        justify-content: flex-start;
+        z-index: 9;
+        padding-top: 50px;
+        position: absolute;
+        height: 100vh;
+        width: 350px;
+        right: -350px;
+        list-style: none;
+        background-color: rgb(255, 255, 255);
+        transition: transform .3s;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px 30px;
+        color: #333;
+        text-decoration: none;
+    }
+}
+
+/* portrait phones */
+@media only screen and (max-width: 767px) and (orientation: portrait) {}
