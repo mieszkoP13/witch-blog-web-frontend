@@ -19,10 +19,12 @@ const SignIn = (props) => {
   
   const onSubmit = (data) => {
     console.log(JSON.stringify(data));
+    
     axios
       .post("https://witchblog.azurewebsites.net/api/v1/auth/signin", data)
       .then((res) => {
-        console.log(res);
+        //console.log(res);
+        localStorage.setItem("token", res.data.token);
       })
       .catch((err) => {
         console.log(err);
