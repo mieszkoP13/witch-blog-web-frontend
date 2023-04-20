@@ -8,19 +8,20 @@ const Profile = () => {
 
   useEffect(() => {
     const getData = () => {
-      setToken(localStorage.getItem("token"));
       if (!token) {
         const params = new URLSearchParams(window.location.search);
         const query = params.get("token");
-        localStorage.setItem("token", query);
-        setToken(query);
+        if (query) {
+          localStorage.setItem("token", query);
+          setToken(query);
+        }
       }
 
-      if (token) {
+      if (localStorage.getItem("token")) {
         axios
           .get(`https://witchblog.azurewebsites.net/api/v1/users/me`, {
             headers: {
-              Authorization: `Bearer ${token}`,
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
             },
           })
           .then((res) => {
