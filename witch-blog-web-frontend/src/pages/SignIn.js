@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import GoogleLoginButton from "../components/GoogleLoginButton";
 import "./SignIn.css";
+import { useNavigate } from "react-router-dom";
 
 const RE_PASSWD = /^\S.{8,}$/;
 // https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript
@@ -16,6 +17,8 @@ const SignIn = (props) => {
     handleSubmit,
     getValues,
   } = useForm();
+
+  const navigate = useNavigate();
   
   const onSubmit = (data) => {
     console.log(JSON.stringify(data));
@@ -25,6 +28,7 @@ const SignIn = (props) => {
       .then((res) => {
         //console.log(res);
         localStorage.setItem("token", res.data.token);
+        navigate("/users/profile")
       })
       .catch((err) => {
         console.log(err);
