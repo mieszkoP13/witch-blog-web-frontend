@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import GoogleLoginButton from "../components/GoogleLoginButton";
-import './Profile.css'
+import "./Profile.css";
+import useLoginStatus from "../hooks/useLoginStatus";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
   const [token, setToken] = useState(null);
-
+  const isLoggedIn = useLoginStatus();
   useEffect(() => {
     const getData = () => {
-      if (!token) {
+      if (!isLoggedIn) {
         const params = new URLSearchParams(window.location.search);
         const query = params.get("token");
         if (query) {
@@ -18,7 +19,7 @@ const Profile = () => {
         }
       }
 
-      if (localStorage.getItem("token")) {
+      if (isLoggedIn) {
         axios
           .get(`https://witchblog.azurewebsites.net/api/v1/users/me`, {
             headers: {
@@ -27,12 +28,13 @@ const Profile = () => {
           })
           .then((res) => {
             setProfile(res.data);
+            console.log(res);
           })
           .catch((err) => console.log(err));
       }
     };
     getData();
-  }, [token]);
+  }, [token, isLoggedIn]);
 
   const logOut = () => {
     localStorage.removeItem("token");
