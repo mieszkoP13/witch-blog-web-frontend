@@ -40,8 +40,25 @@ input {
     display: none;
 }
 
-.send-btn {
+.btn {
     width: 100px;
+    display: block;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(101, 101, 224);
+    color: white;
+    font-size: 18px;
+    margin-top: 25px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.sign-in-err-h1 {
+    margin-bottom: 10px;
+}
+
+.btn-open-pop {
+    width: 200px;
     display: block;
     border: none;
     border-radius: 4px;

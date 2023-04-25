@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from 'react'
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import GoogleLoginButton from "../components/GoogleLoginButton";
+import GoogleLoginButton from "../components/GoogleLoginButton"
+import PopUp from "../components/PopUp"
 import "./SignIn.css";
 import { useNavigate } from "react-router-dom";
 
@@ -19,10 +20,11 @@ const SignIn = (props) => {
   } = useForm();
 
   const navigate = useNavigate();
+  const [showPopUp, setShowPopUp] = useState(false);
   
   const onSubmit = (data) => {
     console.log(JSON.stringify(data));
-    
+
     axios
       .post("https://witchblog.azurewebsites.net/api/v1/auth/signin", data)
       .then((res) => {
@@ -32,10 +34,12 @@ const SignIn = (props) => {
       })
       .catch((err) => {
         console.log(err);
+        setShowPopUp(true)
       });
   };
 
   return (
+    <>
     <div className="wrap-sign-in">
       <form onSubmit={handleSubmit(onSubmit)}>
         <h1>Sign in!</h1>
@@ -64,10 +68,15 @@ const SignIn = (props) => {
             <p className="error-txt">Wymagane min. 8 znaków, brak spacji</p>
           )}
         </div>
-        <input className="send-btn" type="submit" />
+        <input className="btn" type="submit" />
       </form>
       <GoogleLoginButton />
     </div>
+    <PopUp show={showPopUp} setShow={setShowPopUp}>
+      <h1 className="sign-in-err-h1">Sign up error</h1>
+      <span>Given Email/Password are wrong or your Email Address haven't been confirmed.</span>
+    </PopUp>
+    </>
   );
 };
 

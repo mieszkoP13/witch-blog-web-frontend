@@ -8,6 +8,7 @@ const Profile = () => {
   const [profile, setProfile] = useState(null);
   const [token, setToken] = useState(null);
   const isLoggedIn = useLoginStatus();
+  
   useEffect(() => {
     const getData = () => {
       if (!isLoggedIn) {

@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import GoogleLoginButton from "../components/GoogleLoginButton";
 import "./SignUp.css";
+import { useNavigate } from "react-router-dom";
 
 const RE_USER = /^\S{3,}$/;
 const RE_PASSWD = /^\S.{8,}$/;
@@ -18,6 +19,8 @@ const SignUp = (props) => {
     getValues,
   } = useForm();
 
+  const navigate = useNavigate();
+
   const onSubmit = (data) => {
     delete data.password2;
     console.log(JSON.stringify(data));
@@ -25,6 +28,7 @@ const SignUp = (props) => {
       .post("https://witchblog.azurewebsites.net/api/v1/auth/signup", data)
       .then((res) => {
         console.log(res);
+        navigate("/SignIn")
       })
       .catch((err) => {
         console.log(err);

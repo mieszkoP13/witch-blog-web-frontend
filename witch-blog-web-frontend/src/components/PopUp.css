@@ -1,0 +1,29 @@
+.hide {
+    display: none;
+}
+
+.btn-popup {
+    width: 100px;
+    display: block;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(101, 101, 224);
+    color: white;
+    font-size: 18px;
+    margin-top: 25px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.popup {
+    height: 200px;
+    width: 400px;
+    display: block;
+    background-color: aliceblue;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -100px 0 0 -200px;
+    box-shadow: 2px -2px 6px black;
+    padding: 30px;
+}
