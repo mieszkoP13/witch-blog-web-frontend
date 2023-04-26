@@ -46,11 +46,31 @@ const Profile = () => {
     <div className="wrap-profile">
       {profile ? (
         <>
-          <h3>User Logged in</h3>
-          <p>Email: {profile.email}</p>
-          <p>First Name: {profile.firstName}</p>
-          <p>Last Name: {profile.lastName}</p>
-          <button onClick={logOut}>Log out</button>
+          <div className="left-panel"></div>
+          <div className="right-panel">
+            <h1 className="profile-h1">Profile information and settings</h1>
+            <div className="profile-it">
+              <span className="profile-it-txt">Email</span>
+              <span className="profile-it-txt">{profile.email}</span>
+            </div>
+            <div className="profile-it">
+              <span className="profile-it-txt">First Name</span>
+              <span className="profile-it-txt">{profile.firstName}</span>
+            </div>
+            <div className="profile-it">
+              <span className="profile-it-txt">Last Name</span>
+              <span className="profile-it-txt">{profile.lastName}</span>
+            </div>
+            <div className="profile-it">
+              <span className="profile-it-txt">Date of Birth</span>
+              <span className="profile-it-txt">...</span>
+            </div>
+            <div className="profile-it">
+              <span className="profile-it-txt">Time of Birth</span>
+              <span className="profile-it-txt">...</span>
+            </div>
+            <button className="btn-log-out" onClick={logOut}>Log out</button>
+          </div>
         </>
       ) : (
         <GoogleLoginButton />

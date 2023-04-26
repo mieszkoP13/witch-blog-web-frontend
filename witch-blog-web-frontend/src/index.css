@@ -1,3 +1,10 @@
+:root {
+  --pink: #C484A7;
+  --pink-light: #DCA2CF;
+  --pink-lighter: #F2C7DF;
+  --white: #FFFFFF;
+}
+
 body {
   background-color: rgb(67, 67, 73);
   margin: 0;

@@ -1,12 +1,71 @@
 .wrap-profile {
-    height: 300px;
-    width: 380px;
-    display: block;
-    background-color: aliceblue;
+    height: 600px;
+    width: 900px;
+    display: inline-flex;
+    background-color: var(--pink-light);
     position: absolute;
     left: 50%;
     top: 50%;
-    margin: -150px 0 0 -190px;
+    margin: -300px 0 0 -450px;
     box-shadow: 2px -2px 6px black;
     padding: 30px;
+    border-radius: 10px;
+    flex-direction: row;
+}
+
+.left-panel {
+    background-color: blueviolet;
+    width: 30%;
+    height: 100%;
+}
+
+.right-panel {
+    background-color: var(--pink-light);
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+.profile-h1 {
+    color: var(--white);
+    margin-bottom: 2%;
+}
+
+.profile-it {
+    box-shadow: 1px 2px 3px black;
+    background-color: var(--pink-lighter);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 12%;
+    margin: 1% 0;
+}
+
+.profile-it-txt {
+    font-size: 22px;
+    color: var(--pink);
+    margin: 0 15px;
+}
+
+.profile-it-txt:last-of-type {
+    margin-left: auto;
+    font-size: 22px;
+    color: var(--white);
+}
+
+
+.btn-log-out {
+    width: 200px;
+    display: block;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(101, 101, 224);
+    color: white;
+    font-size: 18px;
+    margin-top: 25px;
+    padding: 5px 10px;
+    cursor: pointer;
 }

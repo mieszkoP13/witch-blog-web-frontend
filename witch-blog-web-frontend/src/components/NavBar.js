@@ -15,9 +15,7 @@ const NavBar = props => {
     })
   })
 
-  const toggleBurger = () => {
-    setActive(!isActive)
-  }
+  const toggleBurger = () => setActive(!isActive)
 
   return (
     <div className="wrapper">
@@ -32,6 +30,7 @@ const NavBar = props => {
             <li><Link to="/">Horoscopes</Link></li>
             <li className={isLoggedIn ? "hide" : null}><Link to="/SignUp">Sign up</Link></li>
             <li className={isLoggedIn ? "hide" : null}><Link to="/SignIn">Sign in</Link></li>
+            <li className={isLoggedIn ? null : "hide"}><Link to="/users/profile">Profile</Link></li>
         </ul>
       </nav>
     </div>
