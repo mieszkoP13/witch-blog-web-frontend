@@ -53,7 +53,7 @@ const SignIn = (props) => {
         </div> ) : 
       ( <>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <h1>Sign in!</h1>
+          <h1 className="sign-in-h1">Sign in!</h1>
           <div className="form-item">
             <h2>Email Address</h2>
             <input
@@ -62,9 +62,8 @@ const SignIn = (props) => {
                 pattern: { value: RE_EMAIL },
               })}
             />
-            {errors.email && (
-              <p className="error-txt">Niepoprawny adres e-mail</p>
-            )}
+            {errors.email ? (<p className="error-txt">Invalid Email Address.</p>)
+             : (<p className="invisible error-txt">Invalid Email Address.</p>)}
           </div>
           <div className="form-item">
             <h2>Password</h2>
@@ -75,14 +74,15 @@ const SignIn = (props) => {
                 pattern: { value: RE_PASSWD },
               })}
             />
-            {errors.password && (
-              <p className="error-txt">Wymagane min. 8 znaków, brak spacji</p>
-            )}
+            {errors.password ? (<p className="error-txt">At least 8 chars, no spaces.</p>)
+             : (<p className="invisible error-txt">At least 8 chars, no spaces.</p>)}
           </div>
-          <input className="btn" type="submit" />
+          <button className="btn-sign-in" type="submit">Sign in</button>
         </form>
-        <GoogleLoginButton />
-        <FacebookLoginButton /> 
+        <div className="login-ways-wrap">
+          <GoogleLoginButton />
+          <FacebookLoginButton />
+        </div>
       </> )
       }
       </div>

@@ -48,7 +48,7 @@ const SignUp = (props) => {
         </div> ) : 
       ( <>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <h1>Sign up!</h1>
+        <h1 className="sign-up-h1">Sign up!</h1>
         <div className="form-item">
           <h2>First Name</h2>
           <input
@@ -57,9 +57,8 @@ const SignUp = (props) => {
               pattern: { value: RE_USER },
             })}
           />
-          {errors.firstName && (
-            <p className="error-txt">Wymagane min. 3 znaki, brak spacji</p>
-          )}
+          {errors.firstName ? (<p className="error-txt">At least 3 chars, no spaces.</p>)
+          : (<p className="invisible error-txt">At least 3 chars, no spaces.</p>)}
         </div>
         <div className="form-item">
           <h2>Last Name</h2>
@@ -69,9 +68,8 @@ const SignUp = (props) => {
               pattern: { value: RE_USER },
             })}
           />
-          {errors.lastName && (
-            <p className="error-txt">Wymagane min. 3 znaki, brak spacji</p>
-          )}
+          {errors.lastName ? (<p className="error-txt">At least 3 chars, no spaces.</p>)
+          : (<p className="invisible error-txt">At least 3 chars, no spaces.</p>)}
         </div>
         <div className="form-item">
           <h2>Email Address</h2>
@@ -81,9 +79,8 @@ const SignUp = (props) => {
               pattern: { value: RE_EMAIL },
             })}
           />
-          {errors.email && (
-            <p className="error-txt">Niepoprawny adres e-mail</p>
-          )}
+          {errors.email ? (<p className="error-txt">Invalid Email Address.</p>)
+            : (<p className="invisible error-txt">Invalid Email Address.</p>)}
         </div>
         <div className="form-item">
           <h2>Password</h2>
@@ -94,9 +91,8 @@ const SignUp = (props) => {
               pattern: { value: RE_PASSWD },
             })}
           />
-          {errors.password && (
-            <p className="error-txt">Wymagane min. 8 znaków, brak spacji</p>
-          )}
+          {errors.password ? (<p className="error-txt">At least 8 chars, no spaces.</p>)
+            : (<p className="invisible error-txt">At least 8 chars, no spaces.</p>)}
         </div>
         <div className="form-item">
           <h2>Repeat password</h2>
@@ -111,14 +107,15 @@ const SignUp = (props) => {
               },
             })}
           />
-          {errors.password2 && (
-            <p className="error-txt">Hasła do siebie nie pasują</p>
-          )}
+          {errors.password2 ? (<p className="error-txt">Passwords doesn't match.</p>)
+            : (<p className="invisible error-txt">Passwords doesn't match.</p>)}
         </div>
-        <input className="send-btn" type="submit" />
+        <button className="btn-sign-up" type="submit">Sign up</button>
       </form>
-      <GoogleLoginButton />
-      <FacebookLoginButton />
+      <div className="login-ways-wrap">
+        <GoogleLoginButton />
+        <FacebookLoginButton />
+      </div>
       </> )
     }
     </div>

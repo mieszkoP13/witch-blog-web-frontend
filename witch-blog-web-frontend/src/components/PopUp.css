@@ -7,7 +7,7 @@
     display: block;
     border: none;
     border-radius: 4px;
-    background-color: rgb(101, 101, 224);
+    background-color: var(--pink-lighter);
     color: white;
     font-size: 18px;
     margin-top: 25px;
@@ -15,11 +15,18 @@
     cursor: pointer;
 }
 
+.btn-popup:hover {
+    background-color: var(--pink-lighter);
+    border: 1px solid var(--white);
+}
+
 .popup {
+    overflow: hidden;
     height: 200px;
     width: 400px;
     display: block;
-    background-color: aliceblue;
+    background-color: var(--pink-light);
+    color: var(--white);
     position: absolute;
     left: 50%;
     top: 50%;

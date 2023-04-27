@@ -7,8 +7,8 @@
 
 .wrapper {
     font-family: 'Open Sans', sans-serif;
-    color: #fff;
-    background-color: #1e1d23;
+    color: var(--pink-lighter);
+    background-color: var(--pink-lighter);
     font-size: 24px;
 }
 
@@ -23,19 +23,19 @@ nav ul {
     height: 70px;
     right: 0;
     list-style: none;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--pink-light);
     transition: transform 0s;
 }
 
 nav a {
     display: block;
     padding: 10px 10px;
-    color: #333;
+    color: var(--white);
     text-decoration: none;
 }
 
 nav a:hover {
-    color: #8d8d8d;
+    color: var(--pink-lighter);
 }
 
 .burger {

@@ -1,29 +1,35 @@
 .wrap-sign-in {
-    height: 300px;
+    height: 430px;
     width: 380px;
     display: block;
-    background-color: aliceblue;
+    background-color: var(--pink-light);
     position: absolute;
     left: 50%;
     top: 50%;
-    margin: -150px 0 0 -190px;
+    margin: -215px 0 0 -190px;
     box-shadow: 2px -2px 6px black;
     padding: 30px;
 }
 
-h1 {
+.sign-in-h1 {
+    color: var(--white);
     text-align: center;
-    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.form-item {
+    margin: 4px 0;
 }
 
 h2 {
+    color: var(--white);
     font-size: 18px;
     margin-bottom: 6px;
 }
 
 input {
     width: 100%;
-    color: rgb(98, 98, 98);
+    color: var(--pink);
     font-size: 14px;
     border-radius: 4px;
     border: 1px solid rgb(140, 140, 140);
@@ -33,24 +39,34 @@ input {
 .error-txt {
     margin-top: 2px;
     font-size: 11px;
-    color: rgb(112, 112, 112);
+    color: var(--white);
 }
 
 .hide {
     display: none;
 }
 
-.btn {
+.invisible {
+    visibility: hidden;
+}
+
+.btn-sign-in {
     width: 100px;
     display: block;
     border: none;
     border-radius: 4px;
-    background-color: rgb(101, 101, 224);
-    color: white;
+    background-color: var(--pink-lighter);
+    color: var(--white);
     font-size: 18px;
-    margin-top: 25px;
+    margin-top: 15px;
     padding: 5px 10px;
     cursor: pointer;
+    border: 1px solid var(--pink);
+}
+
+.btn-sign-in:hover {
+    background-color: var(--pink-lighter);
+    border: 1px solid var(--white);
 }
 
 .sign-in-err-h1 {
@@ -63,7 +79,7 @@ input {
     border: none;
     border-radius: 4px;
     background-color: rgb(101, 101, 224);
-    color: white;
+    color: var(--white);
     font-size: 18px;
     margin-top: 25px;
     padding: 5px 10px;
@@ -72,7 +88,14 @@ input {
 
 .send-btn:hover {
     background-color: rgb(66, 184, 197);
+}
 
+.login-ways-wrap{
+    margin-top: 20px;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 /* loading animation */
@@ -91,7 +114,7 @@ input {
     width: 64px;
     height: 64px;
     border: 8px solid;
-    border-color: #3d5af1 transparent #3d5af1 transparent;
+    border-color: var(--white) transparent var(--white) transparent;
     border-radius: 50%;
     animation: spin-anim 1.2s linear infinite;
 }

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import GoogleLoginButton from "../components/GoogleLoginButton";
 import "./Profile.css";
 import useLoginStatus from "../hooks/useLoginStatus";
 
@@ -81,7 +80,7 @@ const Profile = () => {
           </div>
         </>
       ) : (
-        <GoogleLoginButton />
+        <span>You've been logged out successfully</span>
       )}
     </div>
   );

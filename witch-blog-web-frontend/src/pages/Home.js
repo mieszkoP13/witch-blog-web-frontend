@@ -3,7 +3,7 @@ import "./Home.css";
 
 const Home = (props) => {
 
-  return (<span>strona domowa</span>);
+  return (<></>);
 };
 
 export default Home;
