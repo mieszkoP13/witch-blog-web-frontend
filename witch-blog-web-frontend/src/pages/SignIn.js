@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-import GoogleLoginButton from "../components/GoogleLoginButton"
-import PopUp from "../components/PopUp"
+import GoogleLoginButton from "../components/GoogleLoginButton";
+import FacebookLoginButton from "../components/FacebookLoginButton";
+import PopUp from "../components/PopUp";
 import "./SignIn.css";
 import { useNavigate } from "react-router-dom";
 
@@ -21,7 +22,7 @@ const SignIn = (props) => {
 
   const navigate = useNavigate();
   const [showPopUp, setShowPopUp] = useState(false);
-  
+
   const onSubmit = (data) => {
     console.log(JSON.stringify(data));
 
@@ -30,52 +31,56 @@ const SignIn = (props) => {
       .then((res) => {
         //console.log(res);
         localStorage.setItem("token", res.data.token);
-        navigate("/users/profile")
+        navigate("/users/profile");
       })
       .catch((err) => {
         console.log(err);
-        setShowPopUp(true)
+        setShowPopUp(true);
       });
   };
 
   return (
     <>
-    <div className="wrap-sign-in">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <h1>Sign in!</h1>
-        <div className="form-item">
-          <h2>Email Address</h2>
-          <input
-            {...register("email", {
-              required: true,
-              pattern: { value: RE_EMAIL },
-            })}
-          />
-          {errors.email && (
-            <p className="error-txt">Niepoprawny adres e-mail</p>
-          )}
-        </div>
-        <div className="form-item">
-          <h2>Password</h2>
-          <input
-            type="password"
-            {...register("password", {
-              required: true,
-              pattern: { value: RE_PASSWD },
-            })}
-          />
-          {errors.password && (
-            <p className="error-txt">Wymagane min. 8 znaków, brak spacji</p>
-          )}
-        </div>
-        <input className="btn" type="submit" />
-      </form>
-      <GoogleLoginButton />
-    </div>
-    <PopUp show={showPopUp} setShow={setShowPopUp}>
-      <h1 className="sign-in-err-h1">Sign up error</h1>
-      <span>Given Email/Password are wrong or your Email Address haven't been confirmed.</span>
-    </PopUp>
+      <div className="wrap-sign-in">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <h1>Sign in!</h1>
+          <div className="form-item">
+            <h2>Email Address</h2>
+            <input
+              {...register("email", {
+                required: true,
+                pattern: { value: RE_EMAIL },
+              })}
+            />
+            {errors.email && (
+              <p className="error-txt">Niepoprawny adres e-mail</p>
+            )}
+          </div>
+          <div className="form-item">
+            <h2>Password</h2>
+            <input
+              type="password"
+              {...register("password", {
+                required: true,
+                pattern: { value: RE_PASSWD },
+              })}
+            />
+            {errors.password && (
+              <p className="error-txt">Wymagane min. 8 znaków, brak spacji</p>
+            )}
+          </div>
+          <input className="btn" type="submit" />
+        </form>
+        <GoogleLoginButton />
+        <FacebookLoginButton />
+      </div>
+      <PopUp show={showPopUp} setShow={setShowPopUp}>
+        <h1 className="sign-in-err-h1">Sign up error</h1>
+        <span>
+          Given Email/Password are wrong or your Email Address haven't been
+          confirmed.
+        </span>
+      </PopUp>
     </>
   );
 };

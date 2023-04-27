@@ -8,15 +8,21 @@ const Profile = () => {
   const [profile, setProfile] = useState(null);
   const [token, setToken] = useState(null);
   const isLoggedIn = useLoginStatus();
-  
+
   useEffect(() => {
     const getData = () => {
       if (!isLoggedIn) {
         const params = new URLSearchParams(window.location.search);
         const query = params.get("token");
         if (query) {
+          params.delete("token");
           localStorage.setItem("token", query);
           setToken(query);
+          window.history.pushState(
+            {},
+            "",
+            "http://localhost:3000/users/profile"
+          );
         }
       }
 
@@ -69,7 +75,9 @@ const Profile = () => {
               <span className="profile-it-txt">Time of Birth</span>
               <span className="profile-it-txt">...</span>
             </div>
-            <button className="btn-log-out" onClick={logOut}>Log out</button>
+            <button className="btn-log-out" onClick={logOut}>
+              Log out
+            </button>
           </div>
         </>
       ) : (

@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import GoogleLoginButton from "../components/GoogleLoginButton";
+import FacebookLoginButton from "../components/FacebookLoginButton";
 import "./SignUp.css";
 import { useNavigate } from "react-router-dom";
 
@@ -28,7 +29,7 @@ const SignUp = (props) => {
       .post("https://witchblog.azurewebsites.net/api/v1/auth/signup", data)
       .then((res) => {
         console.log(res);
-        navigate("/SignIn")
+        navigate("/SignIn");
       })
       .catch((err) => {
         console.log(err);
@@ -108,6 +109,7 @@ const SignUp = (props) => {
         <input className="send-btn" type="submit" />
       </form>
       <GoogleLoginButton />
+      <FacebookLoginButton />
     </div>
   );
 };
