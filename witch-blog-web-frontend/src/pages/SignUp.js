@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import GoogleLoginButton from "../components/GoogleLoginButton";
@@ -21,23 +21,32 @@ const SignUp = (props) => {
   } = useForm();
 
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = (data) => {
+    setLoading(true);
     delete data.password2;
     console.log(JSON.stringify(data));
     axios
       .post("https://witchblog.azurewebsites.net/api/v1/auth/signup", data)
       .then((res) => {
+        setLoading(false);
         console.log(res);
         navigate("/SignIn");
       })
       .catch((err) => {
+        setLoading(false);
         console.log(err);
       });
   };
 
   return (
     <div className="wrap-sign-up">
+      {loading ? 
+      ( <div className="loader-container">
+      	  <div className="spinner"></div>
+        </div> ) : 
+      ( <>
       <form onSubmit={handleSubmit(onSubmit)}>
         <h1>Sign up!</h1>
         <div className="form-item">
@@ -110,6 +119,8 @@ const SignUp = (props) => {
       </form>
       <GoogleLoginButton />
       <FacebookLoginButton />
+      </> )
+    }
     </div>
   );
 };

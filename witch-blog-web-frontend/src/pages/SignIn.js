@@ -22,18 +22,23 @@ const SignIn = (props) => {
 
   const navigate = useNavigate();
   const [showPopUp, setShowPopUp] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = (data) => {
+
+    setLoading(true);
     console.log(JSON.stringify(data));
 
     axios
       .post("https://witchblog.azurewebsites.net/api/v1/auth/signin", data)
       .then((res) => {
         //console.log(res);
+        setLoading(false);
         localStorage.setItem("token", res.data.token);
         navigate("/users/profile");
       })
       .catch((err) => {
+        setLoading(false);
         console.log(err);
         setShowPopUp(true);
       });
@@ -42,6 +47,11 @@ const SignIn = (props) => {
   return (
     <>
       <div className="wrap-sign-in">
+      {loading ? 
+      ( <div className="loader-container">
+      	  <div className="spinner"></div>
+        </div> ) : 
+      ( <>
         <form onSubmit={handleSubmit(onSubmit)}>
           <h1>Sign in!</h1>
           <div className="form-item">
@@ -72,7 +82,9 @@ const SignIn = (props) => {
           <input className="btn" type="submit" />
         </form>
         <GoogleLoginButton />
-        <FacebookLoginButton />
+        <FacebookLoginButton /> 
+      </> )
+      }
       </div>
       <PopUp show={showPopUp} setShow={setShowPopUp}>
         <h1 className="sign-in-err-h1">Sign up error</h1>
