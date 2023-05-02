@@ -26,7 +26,7 @@ const NavBar = props => {
         <ul className={isActive ? "active" : null}>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/">Articles</Link></li>
-            <li><Link to="/">Divinations</Link></li>
+            <li><Link to="/Divinations">Divinations</Link></li>
             <li><Link to="/">Horoscopes</Link></li>
             <li className={isLoggedIn ? "hide" : null}><Link to="/SignUp">Sign up</Link></li>
             <li className={isLoggedIn ? "hide" : null}><Link to="/SignIn">Sign in</Link></li>

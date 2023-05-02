@@ -1,0 +1,41 @@
+.wrap-divinC {
+    height: 700px;
+    width: 1000px;
+    display: inline-flex;
+    background-color: var(--pink-light);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -350px 0 0 -500px;
+    box-shadow: 2px -2px 6px black;
+    padding: 30px;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+.top-panel {
+    width: 100%;
+    height: 32%;
+}
+
+.bottom-panel {
+    background-color: var(--pink-light);
+    width: 100%;
+    height: 68%;
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+}
+
+.divinC-h1 {
+    color: var(--white);
+    font-size: 44px;
+    margin: 18px;
+    text-align: center;
+}
+
+.divinC-h2 {
+    color: var(--pink-lighter);
+    font-size: 30px;
+    text-align: center;
+}
