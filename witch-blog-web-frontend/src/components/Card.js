@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Back from './Back.svg';
-import Cesarzowa from './Cesarzowa.jpg';
 import "./Card.css"
 
 const Card = props => {
@@ -10,7 +9,7 @@ const Card = props => {
 
   return (
     <div onClick={flipOnce} className="card-div">
-        <img className="card" src={flip ? Cesarzowa : Back} alt="Card" />
+      <img className="card" src={flip ? `data:image/jpeg;base64,${props.base64}` : Back} alt="Card" />
     </div>
   )
 }
