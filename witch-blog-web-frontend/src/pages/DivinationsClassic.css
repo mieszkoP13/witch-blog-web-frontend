@@ -1,12 +1,20 @@
 .wrap-divinC {
-    height: 700px;
-    width: 1000px;
-    display: inline-flex;
-    background-color: var(--pink-light);
-    position: absolute;
+    height: 1300px;
+    width: 1100px;
     left: 50%;
     top: 50%;
-    margin: -350px 0 0 -500px;
+    margin: -450px 0 0 -550px;
+    padding: 25px;
+    display: inline-flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.box-divinC {
+    width: 100%;
+    height: 62%;
+    display: flex;
+    background-color: var(--pink-light);
     box-shadow: 2px -2px 6px black;
     padding: 30px;
     border-radius: 10px;
@@ -15,13 +23,13 @@
 
 .top-panel {
     width: 100%;
-    height: 32%;
+    height: 30%;
 }
 
 .bottom-panel {
     background-color: var(--pink-light);
     width: 100%;
-    height: 68%;
+    height: 70%;
     display: flex;
     flex-direction: row;
     padding: 2%;
@@ -40,19 +48,65 @@
     text-align: center;
 }
 
+.btn-divinC {
+    align-self: last baseline;
+    width: 340px;
+    height: 4%;
+    display: inline-block;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--pink-light);
+    color: var(--white);
+    font-size: 32px;
+    margin-top: 15px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid var(--pink);
+}
+
+.btn-divinC:hover {
+    background-color: var(--pink-light);
+    border: 1px solid var(--white);
+}
+
+.hide {
+    display: none;
+}
+
+.meaning {
+    height: 34%;
+    width: 1000px;
+    display: inline-block;
+}
+
+.meaning-h1 {
+    color: var(--white);
+    font-size: 44px;
+    margin: 18px;
+    text-align: center;
+}
+
+.meaning-h2 {
+    color: var(--white);
+    font-size: 30px;
+    text-align: center;
+}
+
 /* loading animation */
 
-.loader-container {
+.loader-divinC {
+    top: 0px;
+    position:relative;
     justify-self: center;
     overflow: hidden;
     display: block;
     justify-content: center;
     align-items: center;
-    position: fixed;
     z-index: 1;
 }
 
-.spinner {
+.spinner-divinC {
+    position: fixed;
     width: 64px;
     height: 64px;
     border: 8px solid;

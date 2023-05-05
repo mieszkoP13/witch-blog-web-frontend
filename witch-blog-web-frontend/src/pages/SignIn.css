@@ -86,10 +86,6 @@ input {
     cursor: pointer;
 }
 
-.send-btn:hover {
-    background-color: rgb(66, 184, 197);
-}
-
 .login-ways-wrap{
     margin-top: 20px;
     height: 90px;
