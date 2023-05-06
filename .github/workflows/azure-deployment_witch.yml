@@ -24,7 +24,8 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm cache clean --force
-          npm install -g npm@latest
+          npm install --save react react-dom react-scripts
+          npm install
           npm run build --if-present
           
       - name: Zip artifact for deployment
