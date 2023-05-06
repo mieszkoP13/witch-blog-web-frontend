@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Profile.css";
 import useLoginStatus from "../hooks/useLoginStatus";
 import EditPopUp from "../components/EditPopUp";
+import DeleteProfileButton from "../components/DeleteProfileButton";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -131,9 +132,12 @@ const Profile = () => {
               <span className="profile-it-txt">Time of Birth</span>
               <span className="profile-it-txt">...</span>
             </div>
-            <button className="btn-log-out" onClick={logOut}>
-              Log out
-            </button>
+            <div>
+              <button className="btn-log-out" onClick={logOut}>
+                Log out
+              </button>
+              <DeleteProfileButton email={profile.email} />
+            </div>
           </div>
         </>
       ) : (
