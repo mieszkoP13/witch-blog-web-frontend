@@ -42,6 +42,7 @@ const Profile = () => {
 
   const logOut = () => {
     localStorage.removeItem("token");
+    setProfile(null)
     navigate("/users/profile");
   };
 
