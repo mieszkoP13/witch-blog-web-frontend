@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Profile.css";
 import useLoginStatus from "../hooks/useLoginStatus";
@@ -7,6 +8,7 @@ const Profile = () => {
   const [profile, setProfile] = useState(null);
   const [token, setToken] = useState(null);
   const isLoggedIn = useLoginStatus();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getData = () => {
@@ -17,11 +19,7 @@ const Profile = () => {
           params.delete("token");
           localStorage.setItem("token", query);
           setToken(query);
-          window.history.pushState(
-            {},
-            "",
-            "http://localhost:3000/users/profile"
-          );
+          navigate("/users/profile");
         }
       }
 
@@ -44,7 +42,7 @@ const Profile = () => {
 
   const logOut = () => {
     localStorage.removeItem("token");
-    window.location.href = "http://localhost:3000/users/profile";
+    navigate("/users/profile");
   };
 
   return (
