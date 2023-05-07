@@ -17,7 +17,6 @@ const SignIn = (props) => {
     register,
     formState: { errors },
     handleSubmit,
-    getValues,
   } = useForm();
 
   const navigate = useNavigate();
