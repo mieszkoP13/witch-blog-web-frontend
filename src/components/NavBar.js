@@ -14,8 +14,10 @@ const NavBar = (props) => {
     });
   });
 
-  const toggleBurger = () => setActive(!isActive);
   useEffect(() => {}, [isLoggedIn]);
+  
+  const toggleBurger = () => setActive(!isActive);
+  
 
   return (
     <div className="wrapper">
