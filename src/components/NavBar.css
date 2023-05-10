@@ -9,7 +9,6 @@
     font-family: 'Open Sans', sans-serif;
     color: var(--pink-lighter);
     background-color: var(--pink-lighter);
-    font-size: 24px;
 }
 
 nav ul {
@@ -31,6 +30,7 @@ nav a {
     display: block;
     padding: 10px 10px;
     color: var(--white);
+    font-size: 24px;
     text-decoration: none;
 }
 
@@ -61,14 +61,50 @@ nav a:hover {
     color: #333;
 }
 
-.active {
-    width: 300px;
+@media only screen and (max-width: 1199px) {
+    .burger {
+        display: block;
+        z-index: 10;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 10px 20px;
+        font-size: 46px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        transition: transform .3s;
+    }
+
+    nav ul {
+        display: block;
+        flex-direction: column;
+        justify-content: flex-start;
+        z-index: 9;
+        padding-top: 50px;
+        position: fixed;
+        height: 100%;
+        width: 0;
+        right: 0;
+        list-style: none;
+        background-color: rgb(255, 255, 255);
+        transition: transform .3s;
+    }
+
+    nav a {
+        display: block;
+        padding: 10px 30px;
+        color: #333;
+        font-size: 28px;
+        text-decoration: none;
+    }
+
+    .active {
+        width: 350px;
+    }
 }
 
-/* tablets and desktop */
-@media only screen and (min-width: 768px) {}
-
-/* phones */
 @media only screen and (max-width: 767px) {
     .burger {
         display: block;
@@ -104,7 +140,12 @@ nav a:hover {
         display: block;
         padding: 10px 30px;
         color: #333;
+        font-size: 24px;
         text-decoration: none;
+    }
+
+    .active {
+        width: 280px;
     }
 }
 

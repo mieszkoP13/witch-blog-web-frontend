@@ -1,1 +1,180 @@
- 
+.home-bg {
+    background-image: url("home.jpg");
+    background-size: cover;
+    object-fit: cover;
+    vertical-align: middle;
+    min-height: 100%;
+    min-width: 1024px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.home-h1 {
+    position: absolute;
+    right: 8%;
+    top: 17%;
+    width: calc(15vw + 15vh);
+    height: auto;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    font-size: calc(2vw + 2vh);
+    white-space: nowrap;
+    color: var(--white);
+}
+
+.home-h2-1 {
+    position: absolute;
+    right: 5%;
+    top: 40%;
+    width: calc(18vw + 18vh);
+    height: auto;
+    justify-content: center;
+    text-align: start;
+    align-content: center;
+    font-size: calc(1vw + 1.2vh);
+    color: var(--white);
+}
+
+.home-h2-2 {
+    position: absolute;
+    right: 5%;
+    top: 70%;
+    width: calc(18vw + 18vh);
+    height: auto;
+    justify-content: center;
+    text-align: start;
+    align-content: center;
+    font-size: calc(1vw + 1.2vh);
+    color: var(--white);
+}
+
+/* for window sizes with big width and low height (5/2 ratio) */
+@media (min-aspect-ratio: 5/2) {
+    .home-h1 {
+        position: absolute;
+        right: 8vw;
+        top: 7vw;
+        width: 24vw;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        font-size: 2.6vw;
+        white-space: nowrap;
+        color: var(--white);
+    }
+
+    .home-h2-1 {
+        position: absolute;
+        right: 6vw;
+        top: 15vw;
+        width: 26vw;
+        height: auto;
+        justify-content: center;
+        text-align: start;
+        align-content: center;
+        font-size: 1.5vw;
+        color: var(--white);
+    }
+    
+    .home-h2-2 {
+        position: absolute;
+        right: 6vw;
+        top: 27vw;
+        width: 26vw;
+        height: auto;
+        justify-content: center;
+        text-align: start;
+        align-content: center;
+        font-size: 1.5vw;
+        color: var(--white);
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .home-h1 {
+        position: absolute;
+        right: 15vw;
+        top: 9vw;
+        width: 70vw;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        font-size: 7.3vw;
+        white-space: nowrap;
+        color: var(--white);
+    }
+
+    .home-h2-1 {
+        position: absolute;
+        right: 15vw;
+        top: 40vw;
+        width: 70vw;
+        height: auto;
+        justify-content: center;
+        text-align: start;
+        align-content: center;
+        font-size: 4vw;
+        color: var(--white);
+    }
+    
+    .home-h2-2 {
+        position: absolute;
+        right: 15vw;
+        top: 78vw;
+        width: 70vw;
+        height: auto;
+        justify-content: center;
+        text-align: start;
+        align-content: center;
+        font-size: 4vw;
+        color: var(--white);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .home-h1 {
+        position: absolute;
+        right: 5vw;
+        top: 9vw;
+        width: 90vw;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+        align-content: center;
+        font-size: 8vw;
+        white-space: nowrap;
+        color: var(--white);
+    }
+
+    .home-h2-1 {
+        position: absolute;
+        right: 5vw;
+        top: 40vw;
+        width: 90vw;
+        height: auto;
+        justify-content: center;
+        text-align: start;
+        align-content: center;
+        font-size: 4.5vw;
+        color: var(--white);
+    }
+    
+    .home-h2-2 {
+        position: absolute;
+        right: 5vw;
+        top: 82vw;
+        width: 90vw;
+        height: auto;
+        justify-content: center;
+        text-align: start;
+        align-content: center;
+        font-size: 4.5vw;
+        color: var(--white);
+    }
+}

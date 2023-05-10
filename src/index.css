@@ -19,7 +19,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html::-webkit-scrollbar {
+  display: block;
+  width: 15px;
+  max-width: 2vw;
+  height: 20px;
+}
+html::-webkit-scrollbar-track {
+  background: transparent;
+  height: 20px;
+}
+  
+html::-webkit-scrollbar-thumb {
+  background-color: var(--pink-lighter);
+  border-right: none;
+  border-left: none;
 }
