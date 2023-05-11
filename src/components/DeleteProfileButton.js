@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./DeleteProfileButton.css";
 
 const DeleteProfileButton = (props) => {
   const deleteProfile = () => {
@@ -18,7 +19,7 @@ const DeleteProfileButton = (props) => {
       });
   };
   return (
-    <button className="delete-profile-btn" onClick={deleteProfile}>
+    <button className="btn-delete" onClick={deleteProfile}>
       Delete Account
     </button>
   );

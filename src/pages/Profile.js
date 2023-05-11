@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import '@fortawesome/fontawesome-free/css/all.min.css'
 import "./Profile.css";
 import useLoginStatus from "../hooks/useLoginStatus";
 import EditPopUp from "../components/EditPopUp";
@@ -60,68 +61,77 @@ const Profile = () => {
             <h1 className="profile-h1">Profile information and settings</h1>
             <div className="profile-it">
               <span className="profile-it-txt">Email</span>
-              <span id="email-field" className="profile-it-txt">
-                {profile.email}
-              </span>
               {showPopUpEmail ? (
                 <EditPopUp
                   setShow={setShowPopUpEmail}
                   dataToEdit="email"
                   email={profile.email}
+                  dataValue={profile.email}
                 />
               ) : (
-                <button
-                  className="edit-btn"
-                  onClick={() => {
-                    setShowPopUpEmail(true);
-                  }}
-                >
-                  Edit
-                </button>
+                <>
+                  <span id="email-field" className="profile-it-txt">
+                    {profile.email}
+                  </span>
+                  <button
+                    className="btn-edit"
+                    onClick={() => {
+                      setShowPopUpEmail(true);
+                    }}
+                  >
+                    <i className="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </>
               )}
             </div>
             <div className="profile-it">
               <span className="profile-it-txt">First Name</span>
-              <span id="firstName-field" className="profile-it-txt">
-                {profile.firstName}
-              </span>
               {showPopUpFirstName ? (
                 <EditPopUp
                   setShow={setShowPopUpFirstName}
                   dataToEdit="firstName"
                   email={profile.email}
+                  dataValue={profile.firstName}
                 />
               ) : (
-                <button
-                  className="edit-btn"
-                  onClick={() => {
-                    setShowPopUpFirstName(true);
-                  }}
-                >
-                  Edit
-                </button>
+                <>
+                  <span id="firstName-field" className="profile-it-txt">
+                    {profile.firstName}
+                  </span>
+                  <button
+                    className="btn-edit"
+                    onClick={() => {
+                      setShowPopUpFirstName(true);
+                    }}
+                  >
+                    <i className="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </>
               )}
             </div>
             <div className="profile-it">
               <span className="profile-it-txt">Last Name</span>
-              <span id="lastName-field" className="profile-it-txt">
-                {profile.lastName}
-              </span>
               {showPopUpLastName ? (
                 <EditPopUp
                   setShow={setShowPopUpLastName}
                   dataToEdit="lastName"
                   email={profile.email}
+                  dataValue={profile.lastName}
                 />
               ) : (
-                <button
-                  className="edit-btn"
-                  onClick={() => {
-                    setShowPopUpLastName(true);
-                  }}
-                >
-                  Edit
-                </button>
+                <>
+                  <span id="lastName-field" className="profile-it-txt">
+                    {profile.lastName}
+                  </span>
+                  <button
+                    className="btn-edit"
+                    onClick={() => {
+                      setShowPopUpLastName(true);
+                    }}
+                  >
+                    <i className="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </>
               )}
             </div>
             <div className="profile-it">
@@ -132,7 +142,7 @@ const Profile = () => {
               <span className="profile-it-txt">Time of Birth</span>
               <span className="profile-it-txt">...</span>
             </div>
-            <div>
+            <div className="btns-profile">
               <button className="btn-log-out" onClick={logOut}>
                 Log out
               </button>

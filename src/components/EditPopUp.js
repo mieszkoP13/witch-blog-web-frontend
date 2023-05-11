@@ -1,6 +1,7 @@
 import axios from "axios";
 import "./EditPopUp.css";
 import React, { useState } from "react";
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 const EditPopUp = (props) => {
   const [input, setInput] = useState("");
@@ -30,15 +31,15 @@ const EditPopUp = (props) => {
   };
 
   return (
-    <div className={"edit-popup"}>
-      Edit {props.dataToEdit}:
+    <div className="edit-popup">
       <input
         className="input-edit-popup"
         type="text"
+        defaultValue={props.dataValue}
         onChange={handleInputChange}
       ></input>
       <button className="btn-edit-popup" onClick={edit}>
-        Ok
+        <i className="fa-solid fa-check"></i>
       </button>
     </div>
   );
