@@ -10,7 +10,6 @@ const Profile = () => {
   const [profile, setProfile] = useState(null);
   const [token, setToken] = useState(null);
   const isLoggedIn = useLoginStatus();
-  const [showPopUpEmail, setShowPopUpEmail] = useState(false);
   const [showPopUpFirstName, setShowPopUpFirstName] = useState(false);
   const [showPopUpLastName, setShowPopUpLastName] = useState(false);
 
@@ -61,28 +60,9 @@ const Profile = () => {
             <h1 className="profile-h1">Profile information and settings</h1>
             <div className="profile-it">
               <span className="profile-it-txt">Email</span>
-              {showPopUpEmail ? (
-                <EditPopUp
-                  setShow={setShowPopUpEmail}
-                  dataToEdit="email"
-                  email={profile.email}
-                  dataValue={profile.email}
-                />
-              ) : (
-                <>
-                  <span id="email-field" className="profile-it-txt">
-                    {profile.email}
-                  </span>
-                  <button
-                    className="btn-edit"
-                    onClick={() => {
-                      setShowPopUpEmail(true);
-                    }}
-                  >
-                    <i className="fa-solid fa-pen-to-square"></i>
-                  </button>
-                </>
-              )}
+              <span id="email-field" className="profile-it-txt">
+                {profile.email}
+              </span>
             </div>
             <div className="profile-it">
               <span className="profile-it-txt">First Name</span>
