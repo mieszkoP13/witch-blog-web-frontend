@@ -30,13 +30,13 @@ const NavBar = (props) => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/">Articles</Link>
+            <Link to="/Articles">Articles</Link>
           </li>
           <li>
             <Link to="/Divinations">Divinations</Link>
           </li>
           <li>
-            <Link to="/">Horoscopes</Link>
+            <Link to="/Horoscopes">Horoscopes</Link>
           </li>
           {isLoggedIn ? (
             <li>
