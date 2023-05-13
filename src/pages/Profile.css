@@ -7,10 +7,11 @@
     left: 50%;
     top: 50%;
     margin: -300px 0 0 -450px;
-    box-shadow: 2px -2px 6px black;
+    box-shadow: 2px -2px 6px var(--pink);
     padding: 30px;
     border-radius: 10px;
     flex-direction: row;
+    overflow: hidden;
 }
 
 .left-panel {
@@ -34,7 +35,7 @@
 }
 
 .profile-it {
-    box-shadow: 1px 2px 3px black;
+    box-shadow: 1px 2px 3px var(--pink);
     background-color: var(--pink-lighter);
     border-radius: 8px;
     display: flex;

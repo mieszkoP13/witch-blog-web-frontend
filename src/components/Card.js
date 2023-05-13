@@ -12,9 +12,7 @@ const Card = ({base64,updateFlip,id}) => {
   }, [flip])
 
   return (
-    <div onClick={flipOnce} className="card-div">
-      <img className="card" src={flip ? `data:image/jpeg;base64,${base64}` : Back} alt="Card" />
-    </div>
+    <img onClick={flipOnce} className="card" src={flip ? `data:image/jpeg;base64,${base64}` : Back} alt="Card" />
   )
 }
 

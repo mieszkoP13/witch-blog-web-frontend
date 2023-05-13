@@ -8,6 +8,7 @@
     display: inline-flex;
     flex-direction: column;
     position: absolute;
+    overflow: hidden;
 }
 
 .box-divinC {
@@ -15,15 +16,17 @@
     height: 62%;
     display: flex;
     background-color: var(--pink-light);
-    box-shadow: 2px -2px 6px black;
+    box-shadow: 2px -2px 6px var(--pink);
     padding: 30px;
     border-radius: 10px;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .top-panel {
     width: 100%;
     height: 30%;
+    overflow: hidden;
 }
 
 .bottom-panel {
@@ -33,6 +36,7 @@
     display: flex;
     flex-direction: row;
     padding: 2%;
+    overflow: hidden;
 }
 
 .divinC-h1 {
@@ -40,17 +44,19 @@
     font-size: 44px;
     margin: 18px;
     text-align: center;
+    overflow: hidden;
 }
 
 .divinC-h2 {
     color: var(--pink-lighter);
     font-size: 30px;
     text-align: center;
+    overflow: hidden;
 }
 
 .btn-divinC {
     align-self: last baseline;
-    width: 340px;
+    width: 350px;
     height: 4%;
     display: inline-block;
     border: none;
@@ -61,6 +67,7 @@
     margin-top: 15px;
     padding: 5px 10px;
     cursor: pointer;
+    overflow: hidden;
     border: 1px solid var(--pink);
 }
 
@@ -69,14 +76,26 @@
     border: 1px solid var(--white);
 }
 
-.hide {
-    display: none;
+.card-div {
+    box-shadow: 1px 2px 3px var(--pink);
+    background-color: var(--pink-lighter);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 32%;
+    height: 100%;
+    margin: 0 1%;
+    padding: 30px;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .meaning {
     height: 34%;
     width: 1000px;
     display: inline-block;
+    overflow: hidden;
 }
 
 .meaning-h1 {
@@ -84,18 +103,21 @@
     font-size: 44px;
     margin: 18px;
     text-align: center;
+    overflow: hidden;
 }
 
 .meaning-h2 {
     color: var(--white);
     font-size: 30px;
     text-align: center;
+    overflow: hidden;
 }
 
 /* loading animation */
 
 .loader-divinC {
-    top: 0px;
+    top: 30px;
+    left: 30px;
     position:relative;
     justify-self: center;
     overflow: hidden;
@@ -106,7 +128,7 @@
 }
 
 .spinner-divinC {
-    position: fixed;
+    position: sticky;
     width: 64px;
     height: 64px;
     border: 8px solid;
@@ -121,5 +143,124 @@
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media only screen and (max-height: 1050px) {
+    .wrap-divinC {
+        height: 1300px;
+        width: 1100px;
+        left: 50%;
+        top: 530px;
+        margin: -450px 0 0 -550px;
+        padding: 25px;
+        display: inline-flex;
+        flex-direction: column;
+        position: absolute;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+
+    .wrap-divinC {
+        height: 128vw;
+        width: 98vw;
+        left: 1vw;
+        top: 150px;
+        margin: 0;
+        padding: 2.5vw;
+        display: inline-flex;
+        flex-direction: column;
+        position: absolute;
+    }
+
+    .box-divinC {
+        width: 100%;
+        height: 62%;
+        display: flex;
+        background-color: var(--pink-light);
+        box-shadow: 2px -2px 6px var(--pink);
+        padding: 0.5vw;
+        border-radius: 10px;
+        flex-direction: column;
+    }
+
+    .top-panel {
+        width: 100%;
+        height: 36%;
+    }
+    
+    .bottom-panel {
+        background-color: var(--pink-light);
+        width: 100%;
+        height: 64%;
+        display: flex;
+        flex-direction: row;
+        padding: 2%;
+    }
+
+    .divinC-h1 {
+        color: var(--white);
+        font-size: 5.2vw;
+        margin: 3vw;
+        text-align: center;
+    }
+    
+    .divinC-h2 {
+        color: var(--pink-lighter);
+        font-size: 4vw;
+        text-align: center;
+    }
+
+    .card-div {
+        box-shadow: 1px 2px 3px var(--pink);
+        background-color: var(--pink-lighter);
+        border-radius: 8px;
+        display: flex;
+        align-self: center;
+        align-items: center;
+        align-content: center;
+        
+        width: 32%;
+        height: 100%;
+        margin: 0 1vw;
+        padding: 2vw;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .btn-divinC {
+        align-self: last baseline;
+        width: 46vw;
+        height: 7vw;
+        display: inline-block;
+        border: none;
+        border-radius: 8px;
+        background-color: var(--pink-light);
+        color: var(--white);
+        font-size: 4vw;
+        margin-top: 15px;
+        padding: 5px 10px;
+        cursor: pointer;
+        border: 1px solid var(--pink);
+    }
+
+    .meaning {
+        height: 34%;
+        width: 96vw;
+        display: inline-block;
+    }
+    
+    .meaning-h1 {
+        color: var(--white);
+        font-size: 5.2vw;
+        margin: 18px;
+        text-align: center;
+    }
+    
+    .meaning-h2 {
+        color: var(--white);
+        font-size: 3.2vw;
+        text-align: center;
     }
 }

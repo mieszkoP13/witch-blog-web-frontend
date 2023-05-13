@@ -31,14 +31,12 @@ const SignIn = (props) => {
     axios
       .post("https://witchblog.azurewebsites.net/api/v1/auth/signin", data)
       .then((res) => {
-        //console.log(res);
         setLoading(false);
         localStorage.setItem("token", res.data.token);
         navigate("/users/profile");
       })
       .catch((err) => {
         setLoading(false);
-        console.log(err);
         setShowPopUp(true);
       });
   };

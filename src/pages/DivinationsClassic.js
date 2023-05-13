@@ -41,7 +41,6 @@ const DivinationsClassic = (props) => {
         })
         .catch((err) => {
           setLoading(false);
-          console.log(err)
         });
     }
 
@@ -63,9 +62,15 @@ const DivinationsClassic = (props) => {
               <h2 className="divinC-h2">Get the answers with 3-card Tarot spread <br/> by tapping each card.</h2>
             </div>
             <div className="bottom-panel">
-              <Card base64={loading ? '' : cards[0].base64} updateFlip={updateFlip} id={0}/>
-              <Card base64={loading ? '' : cards[1].base64} updateFlip={updateFlip} id={1}/>
-              <Card base64={loading ? '' : cards[2].base64} updateFlip={updateFlip} id={2}/>
+              <div className="card-div">
+                <Card base64={loading ? '' : cards[0].base64} updateFlip={updateFlip} id={0}/>
+              </div>
+              <div className="card-div">
+                <Card base64={loading ? '' : cards[1].base64} updateFlip={updateFlip} id={1}/>
+              </div>
+              <div className="card-div">
+                <Card base64={loading ? '' : cards[2].base64} updateFlip={updateFlip} id={2}/>
+              </div>
             </div>
           </>
         )}

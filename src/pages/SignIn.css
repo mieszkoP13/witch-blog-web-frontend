@@ -7,8 +7,9 @@
     left: 50%;
     top: 50%;
     margin: -215px 0 0 -190px;
-    box-shadow: 2px -2px 6px black;
+    box-shadow: 2px -2px 6px var(--pink);
     padding: 30px;
+    overflow: hidden;
 }
 
 .sign-in-h1 {
@@ -107,6 +108,7 @@ input {
 }
 
 .spinner {
+    position: sticky;
     width: 64px;
     height: 64px;
     border: 8px solid;

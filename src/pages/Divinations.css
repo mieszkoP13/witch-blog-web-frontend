@@ -7,7 +7,7 @@
     left: 50%;
     top: 50%;
     margin: -250px 0 0 -350px;
-    box-shadow: 2px -2px 6px black;
+    box-shadow: 2px -2px 6px var(--pink);
     padding: 30px;
     border-radius: 10px;
 
@@ -20,10 +20,12 @@
     color: var(--white);
     margin: 24px;
     text-align: center;
+    font-size: 32px;
+    overflow: hidden;
 }
 
 .btn-divin {
-    box-shadow: 1px 2px 3px black;
+    box-shadow: 1px 2px 3px var(--pink);
     background-color: var(--pink-lighter);
     border-radius: 10px;
     cursor: pointer;
@@ -46,4 +48,71 @@
     color: var(--pink);
     margin: 0 15px;
     text-decoration: none;
+}
+
+@media only screen and (max-height: 800px) {
+    .wrap-divinations {
+        height: 500px;
+        width: 700px;
+    
+        background-color: var(--pink-light);
+        position: absolute;
+        left: 50%;
+        top: 400px;
+        margin: -250px 0 0 -350px;
+        box-shadow: 2px -2px 6px var(--pink);
+        border-radius: 10px;
+    
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .divinations-h1 {
+        color: var(--white);
+        margin: 3vw;
+        text-align: center;
+        font-size: 4.3vw;
+        overflow: hidden;
+    }
+
+    .wrap-divinations {
+        height: 64vw;
+        width: 90vw;
+    
+        background-color: var(--pink-light);
+        position: absolute;
+        left: 5vw;
+        top: 100px;
+        margin: 0;
+        box-shadow: 2px -2px 6px var(--pink);
+        border-radius: 10px;
+    
+        display: flex;
+        flex-direction: column;
+        padding: 2.5vw;
+    }
+
+    .btn-divin {
+        box-shadow: 1px 2px 3px var(--pink);
+        background-color: var(--pink-lighter);
+        border-radius: 10px;
+        cursor: pointer;
+        border: 1px solid var(--pink);
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 12vw;
+        margin: 1vw 0;
+        text-decoration: none;
+    }
+
+    .btn-divin-txt {
+        font-size: 4.2vw;
+        color: var(--pink);
+        margin: 0 15px;
+        text-decoration: none;
+    }
 }

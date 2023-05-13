@@ -26,17 +26,15 @@ const SignUp = (props) => {
   const onSubmit = (data) => {
     setLoading(true);
     delete data.password2;
-    console.log(JSON.stringify(data));
+
     axios
       .post("https://witchblog.azurewebsites.net/api/v1/auth/signup", data)
       .then((res) => {
         setLoading(false);
-        console.log(res);
         navigate("/SignIn");
       })
       .catch((err) => {
         setLoading(false);
-        console.log(err);
       });
   };
 

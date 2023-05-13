@@ -32,7 +32,6 @@ const Profile = () => {
           })
           .then((res) => {
             setProfile(res.data);
-            console.log(res);
           })
           .catch((err) => console.log(err));
       }

@@ -24,6 +24,7 @@ nav ul {
     list-style: none;
     background-color: var(--pink-light);
     transition: transform 0s;
+    overflow-y: hidden;
 }
 
 nav a {
