@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "./DeleteProfileButton.css";
+import DeletePopUp from "./DeletePopUp";
 
 const DeleteProfileButton = (props) => {
+  const [showPopUp, setShowPopUp] = useState(false);
   const deleteProfile = () => {
     axios
       .delete(
@@ -19,9 +21,25 @@ const DeleteProfileButton = (props) => {
       });
   };
   return (
-    <button className="btn-delete" onClick={deleteProfile}>
-      Delete Account
-    </button>
+    <>
+      {showPopUp ? (
+        <DeletePopUp setShow={setShowPopUp} customFunction={deleteProfile}>
+          <h1 className="sign-in-err-h1">
+            Are you sure you want to delete your account?
+          </h1>
+          <span>This action is irreversible</span>
+        </DeletePopUp>
+      ) : (
+        <button
+          className="btn-delete"
+          onClick={() => {
+            setShowPopUp(true);
+          }}
+        >
+          Delete Account
+        </button>
+      )}
+    </>
   );
 };
 

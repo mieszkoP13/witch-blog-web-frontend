@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import '@fortawesome/fontawesome-free/css/all.min.css'
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./Profile.css";
 import useLoginStatus from "../hooks/useLoginStatus";
 import EditPopUp from "../components/EditPopUp";
