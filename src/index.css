@@ -2,7 +2,8 @@
   --pink: #C484A7;
   --pink-light: #DCA2CF;
   --pink-lighter: #F2C7DF;
-  --white: #FFFFFF;
+  --white: #FFF;
+  --black: #000;
 }
 
 body {
