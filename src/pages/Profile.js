@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./Profile.css";
 import useLoginStatus from "../hooks/useLoginStatus";
+import EditPopUp from "../components/EditPopUp";
+import DeleteProfileButton from "../components/DeleteProfileButton";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
   const [token, setToken] = useState(null);
   const isLoggedIn = useLoginStatus();
+  const [showPopUpFirstName, setShowPopUpFirstName] = useState(false);
+  const [showPopUpLastName, setShowPopUpLastName] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -55,15 +60,59 @@ const Profile = () => {
             <h1 className="profile-h1">Profile information and settings</h1>
             <div className="profile-it">
               <span className="profile-it-txt">Email</span>
-              <span className="profile-it-txt">{profile.email}</span>
+              <span id="email-field" className="profile-it-txt">
+                {profile.email}
+              </span>
             </div>
             <div className="profile-it">
               <span className="profile-it-txt">First Name</span>
-              <span className="profile-it-txt">{profile.firstName}</span>
+              {showPopUpFirstName ? (
+                <EditPopUp
+                  setShow={setShowPopUpFirstName}
+                  dataToEdit="firstName"
+                  email={profile.email}
+                  dataValue={profile.firstName}
+                />
+              ) : (
+                <>
+                  <span id="firstName-field" className="profile-it-txt">
+                    {profile.firstName}
+                  </span>
+                  <button
+                    className="btn-edit"
+                    onClick={() => {
+                      setShowPopUpFirstName(true);
+                    }}
+                  >
+                    <i className="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </>
+              )}
             </div>
             <div className="profile-it">
               <span className="profile-it-txt">Last Name</span>
-              <span className="profile-it-txt">{profile.lastName}</span>
+              {showPopUpLastName ? (
+                <EditPopUp
+                  setShow={setShowPopUpLastName}
+                  dataToEdit="lastName"
+                  email={profile.email}
+                  dataValue={profile.lastName}
+                />
+              ) : (
+                <>
+                  <span id="lastName-field" className="profile-it-txt">
+                    {profile.lastName}
+                  </span>
+                  <button
+                    className="btn-edit"
+                    onClick={() => {
+                      setShowPopUpLastName(true);
+                    }}
+                  >
+                    <i className="fa-solid fa-pen-to-square"></i>
+                  </button>
+                </>
+              )}
             </div>
             <div className="profile-it">
               <span className="profile-it-txt">Date of Birth</span>
@@ -73,9 +122,12 @@ const Profile = () => {
               <span className="profile-it-txt">Time of Birth</span>
               <span className="profile-it-txt">...</span>
             </div>
-            <button className="btn-log-out" onClick={logOut}>
-              Log out
-            </button>
+            <div className="btns-profile">
+              <button className="btn-log-out" onClick={logOut}>
+                Log out
+              </button>
+              <DeleteProfileButton email={profile.email} />
+            </div>
           </div>
         </>
       ) : (

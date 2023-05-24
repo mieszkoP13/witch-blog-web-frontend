@@ -15,7 +15,7 @@ import DivinationsBirth from "./pages/DivinationsBirth";
 const RouteSwitch = () => {
   return (
     <BrowserRouter>
-      <NavBar/>
+      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Articles" element={<Articles />} />
@@ -25,7 +25,7 @@ const RouteSwitch = () => {
         <Route path="/Divinations/Love" element={<DivinationsLove />} />
         <Route path="/Divinations/Birth" element={<DivinationsBirth />} />
         <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/SignIn" element={<SignIn/>} />
+        <Route path="/SignIn" element={<SignIn />} />
         <Route path="/users/profile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
