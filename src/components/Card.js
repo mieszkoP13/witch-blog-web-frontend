@@ -13,12 +13,20 @@ const Card = ({ base64, updateFlip, id }) => {
   }, [flip]);
 
   return (
-    <img
-      onClick={flipOnce}
-      className="tarot-card"
-      src={flip ? `data:image/jpeg;base64,${base64}` : back}
-      alt="Card"
-    />
+    <div className={flip ? "flip flip_container" : "flip_container"}>
+      <img
+        onClick={flipOnce}
+        className="tarot-card front"
+        src={back}
+        alt="Card"
+      />
+      <img
+        onClick={flipOnce}
+        className="tarot-card back"
+        src={`data:image/jpeg;base64,${base64}`}
+        alt="Card"
+      />
+    </div>
   );
 };
 
