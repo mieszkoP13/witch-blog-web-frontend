@@ -87,11 +87,15 @@ li {
 }
 
 .cards_div.active .card:nth-child(1) {
-  transform: translateX(4vh) rotate(30deg) scale(0.85);
+  transform: translateX(4vh) rotate(30deg) scale(0.9);
 }
 
 .cards_div.active .card:nth-child(2) {
-  transform: translateX(-4vh) rotate(-30deg) scale(0.85);
+  transform: translateX(-4vh) rotate(-30deg) scale(0.9);
+}
+
+.cards_div.active .card:nth-child(3) {
+  transform: scale(1.05);
 }
 
 .card {
