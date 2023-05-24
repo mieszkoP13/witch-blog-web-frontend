@@ -19,11 +19,15 @@
 .bottom_left {
   bottom: 0;
   left: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .bottom_right {
   bottom: 0;
   right: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .top_center {
@@ -38,6 +42,8 @@
   padding-right: 0;
   bottom: 0;
   right: calc(50% - 9.5px);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 li {
@@ -54,6 +60,7 @@ li {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: var(--black);
+  cursor: pointer;
 }
 .plus_bar_top {
   margin-bottom: -11px;
@@ -97,6 +104,7 @@ li {
   background-size: cover;
   aspect-ratio: 169/257;
   background-image: url(../imgs/light/reverse.png);
+  background-color: var(--white);
 }
 
 .socials {
@@ -109,10 +117,10 @@ li {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .open_socials {
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
   transform: translateY(-80px);
 }
