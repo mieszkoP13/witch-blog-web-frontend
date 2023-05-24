@@ -1,9 +1,9 @@
 .popup {
   width: 60vw;
   height: fit-content;
-  position: absolute;
+  position: fixed;
   left: 20vw;
-  top: 10vh;
+  top: 30vh;
   background-color: var(--white);
   color: var(--black);
   border: solid 3px var(--black);

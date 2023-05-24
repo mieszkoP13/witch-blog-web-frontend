@@ -1,0 +1,91 @@
+.wrap-sign-in {
+  width: 100vw;
+  height: 50vh;
+  position: absolute;
+  top: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1vh;
+}
+.form-item {
+  height: 10vh;
+}
+
+input {
+  width: 300px;
+  text-decoration: none;
+  color: var(--black);
+  border: solid var(--black) 1px;
+  background-color: var(--white);
+  padding: 10px 5px;
+  margin: 5px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+h2 {
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+
+.btn-sign-in {
+  cursor: pointer;
+  width: 200px;
+  text-decoration: none;
+  color: var(--white);
+  border: solid var(--black) 1px;
+  background-color: var(--black);
+  padding: 10px 50px;
+  margin: 5px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 1.5vh;
+}
+
+.btn-sign-in:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+.error-txt {
+  margin: 0;
+  padding: 0;
+}
+
+/* loading animation */
+
+.loader-container {
+  justify-self: center;
+  overflow: hidden;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+}
+
+.spinner {
+  position: sticky;
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: var(--white) transparent var(--white) transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
