@@ -1,0 +1,78 @@
+.card_container {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  width: 15vw;
+  height: auto;
+  aspect-ratio: 469/850;
+  position: fixed;
+}
+
+.divination-button {
+  position: fixed;
+  bottom: 20vh;
+}
+.cards_wrapper.active .card_container:nth-child(1) {
+  transform: translateX(-20vw) translateY(20vh);
+}
+.cards_wrapper.active .card_container:nth-child(3) {
+  transform: translateX(20vw) translateY(20vh);
+}
+
+.divinations_wrapper {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cards_wrapper {
+  width: 15vw;
+  height: auto;
+  aspect-ratio: 469/850;
+  position: fixed;
+  top: 20vh;
+}
+
+/* loading animation */
+
+.loading_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading_spin {
+  position: sticky;
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: var(--black) transparent var(--black) transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+.loading_text {
+  margin-top: 2vh;
+  font-size: 2vh;
+  animation-name: blinking;
+  animation-duration: 2s;
+  animation-iteration-count: 100;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blinking {
+  50% {
+    color: var(--white);
+  }
+}

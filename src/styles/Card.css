@@ -1,0 +1,10 @@
+.tarot-card {
+  width: 15vw;
+  aspect-ratio: 469/850;
+  position: relative;
+  top: 0;
+  object-fit: cover;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}

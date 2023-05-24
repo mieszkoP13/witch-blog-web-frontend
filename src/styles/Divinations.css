@@ -1,0 +1,28 @@
+.divinations_wrapper {
+  width: 100vw;
+  height: 100vh;
+  margin-top: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.div-button {
+  cursor: pointer;
+  width: 400px;
+  text-decoration: none;
+  color: var(--black);
+  border: solid var(--black) 1px;
+  background-color: var(--white);
+  padding: 10px 50px;
+  margin: 5px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.div-button:hover {
+  color: var(--white);
+  background-color: var(--black);
+}
