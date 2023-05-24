@@ -57,7 +57,7 @@
 .loading_text {
   margin-top: 2vh;
   font-size: 2vh;
-  animation-name: blinking;
+  animation-name: blinking-text;
   animation-duration: 2s;
   animation-iteration-count: 100;
 }
@@ -71,7 +71,7 @@
   }
 }
 
-@keyframes blinking {
+@keyframes blinking-text {
   50% {
     color: var(--white);
   }
