@@ -1,0 +1,29 @@
+.zodiac-div {
+  height: 12vh;
+  width: 12vh;
+  margin: 0.5vh;
+  padding: 0;
+}
+.box-horoscope {
+  width: 78vh;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+.wrap-horoscope {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.btn-horoscope {
+  margin-top: 10vh;
+}
+
+.horoscope-result {
+  text-align: center;
+}
