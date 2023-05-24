@@ -1,0 +1,87 @@
+.login_wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  cursor: pointer;
+  width: 300px;
+  text-decoration: none;
+  color: var(--black);
+  border: solid var(--black) 1px;
+  background-color: var(--white);
+  padding: 10px 50px;
+  margin: 5px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.button-small {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--black);
+  border: solid var(--black) 1px;
+  background-color: var(--white);
+  padding: 10px 50px;
+  width: fit-content;
+  font-size: 16px;
+  margin: 0;
+  border-radius: 10px;
+  font-family: Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+}
+
+.button:hover,
+.button-small:hover {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.profile_wrapper {
+  width: 100vw;
+  height: 50vh;
+  position: absolute;
+  top: 20vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.right_panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+
+.left_panel {
+  background-color: var(--black);
+  width: 100px;
+  height: 100px;
+  margin: 5vh 5vw;
+}
+
+.profile-it {
+  margin: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 0;
+  gap: 2vw;
+}
+
+.btn-edit {
+  margin-left: 1vw;
+  cursor: pointer;
+}
+
+.btn-edit:hover {
+  background-color: var(--black);
+  color: var(--white);
+  box-shadow: none;
+}

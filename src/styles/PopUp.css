@@ -1,0 +1,44 @@
+.popup {
+  width: 60vw;
+  height: fit-content;
+  position: absolute;
+  left: 20vw;
+  top: 10vh;
+  background-color: var(--white);
+  color: var(--black);
+  border: solid 3px var(--black);
+  border-radius: 10px;
+  padding: 2vh 2vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2vw;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 60%;
+}
+
+.popup-button {
+  cursor: pointer;
+  width: fit-content;
+  text-decoration: none;
+  color: var(--black);
+  border: solid var(--black) 1px;
+  background-color: var(--white);
+  padding: 10px 50px;
+  margin: 5px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
+}
+
+.popup-button:hover {
+  color: var(--white);
+  background-color: var(--black);
+}

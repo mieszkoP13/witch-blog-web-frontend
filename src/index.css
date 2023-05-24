@@ -2,8 +2,8 @@
   --pink: #c484a7;
   --pink-light: #dca2cf;
   --pink-lighter: #f2c7df;
-  --white: #fff;
-  --black: #000;
+  --white: #f2f2f2;
+  --black: #333;
 }
 
 body {
@@ -33,4 +33,11 @@ html::-webkit-scrollbar-thumb {
   background-color: var(--pink-lighter);
   border-right: none;
   border-left: none;
+}
+
+body,
+html {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
 }
