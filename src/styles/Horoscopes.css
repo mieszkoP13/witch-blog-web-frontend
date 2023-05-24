@@ -27,3 +27,16 @@
 .horoscope-result {
   text-align: center;
 }
+
+.blinking {
+  animation-name: blinking;
+  animation-duration: 3s;
+  animation-iteration-count: 100;
+}
+
+@keyframes blinking {
+  50% {
+    border-color: var(--white);
+    color: var(--white);
+  }
+}

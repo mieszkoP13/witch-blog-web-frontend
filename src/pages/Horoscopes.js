@@ -17,7 +17,7 @@ const HOROSCOPES = [
   "Your intellectual life could be exciting at the moment. The New Moon in your philosophy sector makes for a gorgeous guide toward the clearest possible expression of your big thoughts. You're better off not keeping this process to yourself, though. Having a skeptical companion around can help you identify any flaws in your logic. Even if you don't succeed in convincing them of everything you want them to believe, you'll at least gain a stronger sense of your own path forward.",
 ];
 
-const Horoscopes = (props) => {
+const Horoscopes = () => {
   const [selectId, setSelectId] = useState();
   const [select, setSelect] = useState(false);
   const [reveal, setReveal] = useState(false);
@@ -42,7 +42,9 @@ const Horoscopes = (props) => {
         </div>
         <button
           onClick={() => select && setReveal(true)}
-          className="btn-horoscope button"
+          className={
+            select ? "btn-horoscope button blinking" : "btn-horoscope button"
+          }
           type="submit"
         >
           Reveal your fate

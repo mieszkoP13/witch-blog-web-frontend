@@ -13,9 +13,14 @@ body {
   background: var(--white);
   background-attachment: fixed;
   margin: 0;
-  font-family: Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+input,
+button {
+  font-family: Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
 }
 
 html::-webkit-scrollbar {
