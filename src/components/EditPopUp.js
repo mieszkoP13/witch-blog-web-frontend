@@ -38,8 +38,14 @@ const EditPopUp = (props) => {
         defaultValue={props.dataValue}
         onChange={handleInputChange}
       ></input>
-      <button className="btn-edit-popup" onClick={edit}>
-        <i className="fa-solid fa-check"></i>
+      <button className="btn-edit-popup btn-yes" onClick={edit}>
+        <i className="fa-solid fa-check fa-xl"></i>
+      </button>
+      <button
+        className="btn-edit-popup btn-x"
+        onClick={() => props.setShow(false)}
+      >
+        <i className="fa-solid fa-x fa-xl"></i>
       </button>
     </div>
   );

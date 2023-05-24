@@ -6,21 +6,33 @@
   margin-left: auto;
   display: inline-flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .input-edit-popup {
-  display: inline-block;
-  height: 1.2em;
+  height: 100%;
+  width: 200px;
+  font-size: 2vh;
+  font-family: Courier, "Lucida Sans Typewriter", "Lucida Typewriter";
 }
 
 .btn-edit-popup {
-  display: inline-block;
-  height: 1.2em;
-}
-
-.btn-edit-popup {
-  color: var(--white);
-  background-color: var(--black);
-  border: none;
+  margin-left: 1vw;
+  height: 100%;
+  width: auto;
+  padding: 10px;
   cursor: pointer;
+}
+
+.btn-edit-popup:hover {
+  background-color: var(--black);
+  color: var(--white);
+  box-shadow: none;
+}
+
+.btn-x {
+  margin-left: 0.5vw;
+}
+.btn-yes {
+  margin-left: 1vw;
 }
