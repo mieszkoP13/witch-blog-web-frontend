@@ -78,7 +78,7 @@ const Profile = () => {
                   dataValue={profile.firstName}
                 />
               ) : (
-                <div>
+                <div className="edit_wrap">
                   <span id="firstName-field" className="profile-it-txt">
                     {profile.firstName}
                   </span>
@@ -88,7 +88,7 @@ const Profile = () => {
                       setShowPopUpFirstName(true);
                     }}
                   >
-                    <i className="fa-solid fa-pen-to-square"></i>
+                    <i className="fa-solid fa-pen-to-square fa-xl fa-sharp"></i>
                   </button>
                 </div>
               )}
@@ -103,7 +103,7 @@ const Profile = () => {
                   dataValue={profile.lastName}
                 />
               ) : (
-                <div>
+                <div className="edit_wrap">
                   <span id="lastName-field" className="profile-it-txt">
                     {profile.lastName}
                   </span>
@@ -113,7 +113,7 @@ const Profile = () => {
                       setShowPopUpLastName(true);
                     }}
                   >
-                    <i className="fa-solid fa-pen-to-square"></i>
+                    <i className="fa-solid fa-pen-to-square fa-xl fa-sharp"></i>
                   </button>
                 </div>
               )}

@@ -10,17 +10,17 @@
 
 .input-edit-popup {
   display: inline-block;
+  height: 1.2em;
 }
 
 .btn-edit-popup {
   display: inline-block;
+  height: 1.2em;
 }
 
 .btn-edit-popup {
-  margin: 0 15px;
-  font-size: 23px;
   color: var(--white);
-  background-color: var(--pink-lighter);
+  background-color: var(--black);
   border: none;
   cursor: pointer;
 }
