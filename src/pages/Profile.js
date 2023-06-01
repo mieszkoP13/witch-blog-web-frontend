@@ -6,6 +6,18 @@ import EditPopUp from "../components/EditPopUp";
 import DeleteProfileButton from "../components/DeleteProfileButton";
 import axios from "axios";
 import "../styles/Profile.css";
+import aquarius from "../imgs/light/zodiac/aquarius.png";
+import aries from "../imgs/light/zodiac/aries.png";
+import cancer from "../imgs/light/zodiac/cancer.png";
+import capricorn from "../imgs/light/zodiac/capricorn.png";
+import gemini from "../imgs/light/zodiac/gemini.png";
+import leo from "../imgs/light/zodiac/leo.png";
+import libra from "../imgs/light/zodiac/libra.png";
+import pisces from "../imgs/light/zodiac/pisces.png";
+import sagittarius from "../imgs/light/zodiac/sagittarius.png";
+import scorpio from "../imgs/light/zodiac/scorpio.png";
+import taurus from "../imgs/light/zodiac/taurus.png";
+import virgo from "../imgs/light/zodiac/virgo.png";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -13,6 +25,8 @@ const Profile = () => {
   const isToken = useTokenStatus();
   const [showPopUpFirstName, setShowPopUpFirstName] = useState(false);
   const [showPopUpLastName, setShowPopUpLastName] = useState(false);
+  const [showPopUpDate, setShowPopUpDate] = useState(false);
+  const [zodiac, setZodiac] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,6 +50,14 @@ const Profile = () => {
             },
           })
           .then((res) => {
+            const date = new Date(res.data.birthDate);
+            console.log(date);
+            const stringDate = date.toLocaleString("pl-PL", {
+              timeZone: "UTC",
+            });
+            console.log(date.getHours());
+            setZodiac(findZodiac(date));
+            res.data.birthDate = stringDate;
             setProfile(res.data);
           })
           .catch((err) => {
@@ -56,11 +78,52 @@ const Profile = () => {
     window.location.reload();
   };
 
+  const findZodiac = (date) => {
+    const days = [21, 20, 21, 21, 22, 22, 23, 24, 24, 24, 23, 22];
+    const signs = [
+      aquarius,
+      pisces,
+      aries,
+      taurus,
+      gemini,
+      cancer,
+      leo,
+      virgo,
+      libra,
+      scorpio,
+      sagittarius,
+      capricorn,
+    ];
+    let month = date.getMonth();
+    let day = date.getDate();
+    if (month === 0 && day <= 20) {
+      month = 11;
+    } else if (day < days[month]) {
+      month--;
+    }
+    // return "../imgs/light/zodiac/" + signs[month] + ".png";
+    return signs[month];
+  };
+
+  const handleClick = () => {
+    navigate("/Horoscopes");
+  };
+
   return (
     <>
       {profile ? (
+<<<<<<< HEAD
         <div className="profile-wrapper">
           <div className="left-panel"></div>
+=======
+        <div className="profile_wrapper">
+          <img
+            onClick={handleClick}
+            src={zodiac}
+            className="left_panel"
+            alt="zodiac"
+          />
+>>>>>>> de65ac87615a6985ff8a2cd80ee779b70ec44f91
           <div className="right-panel">
             <div className="profile-it">
               <span className="profile-it-txt">Email:</span>
@@ -120,11 +183,28 @@ const Profile = () => {
             </div>
             <div className="profile-it">
               <span className="profile-it-txt">Date of Birth:</span>
-              <span className="profile-it-txt">...</span>
-            </div>
-            <div className="profile-it">
-              <span className="profile-it-txt">Time of Birth:</span>
-              <span className="profile-it-txt">...</span>
+              {showPopUpDate ? (
+                <EditPopUp
+                  setShow={setShowPopUpDate}
+                  dataToEdit="birthDate"
+                  email={profile.email}
+                  dataValue={profile.birthDate}
+                />
+              ) : (
+                <div className="edit_wrap">
+                  <span id="birthDate-field" className="profile-it-txt">
+                    {profile.birthDate}
+                  </span>
+                  <button
+                    className="btn-edit"
+                    onClick={() => {
+                      setShowPopUpDate(true);
+                    }}
+                  >
+                    <i className="fa-solid fa-pen-to-square fa-xl fa-sharp"></i>
+                  </button>
+                </div>
+              )}
             </div>
             <div className="profile-it">
               <button className="button-small" onClick={logOut}>
