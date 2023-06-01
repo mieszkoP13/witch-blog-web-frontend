@@ -81,17 +81,11 @@
   animation: spin-anim 1.2s linear infinite;
 }
 
-<<<<<<< HEAD
+
 .divinationsC-loading-text {
   margin-top: 1vw;
   font-size: 1.5vw;
   animation-name: blinking;
-=======
-.loading_text {
-  margin-top: 2vh;
-  font-size: 2vh;
-  animation-name: blinking-text;
->>>>>>> de65ac87615a6985ff8a2cd80ee779b70ec44f91
   animation-duration: 2s;
   animation-iteration-count: 100;
 }

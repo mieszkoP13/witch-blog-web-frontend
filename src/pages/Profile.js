@@ -112,10 +112,6 @@ const Profile = () => {
   return (
     <>
       {profile ? (
-<<<<<<< HEAD
-        <div className="profile-wrapper">
-          <div className="left-panel"></div>
-=======
         <div className="profile_wrapper">
           <img
             onClick={handleClick}
@@ -123,7 +119,6 @@ const Profile = () => {
             className="left_panel"
             alt="zodiac"
           />
->>>>>>> de65ac87615a6985ff8a2cd80ee779b70ec44f91
           <div className="right-panel">
             <div className="profile-it">
               <span className="profile-it-txt">Email:</span>
