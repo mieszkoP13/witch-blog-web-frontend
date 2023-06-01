@@ -112,11 +112,11 @@ const Profile = () => {
   return (
     <>
       {profile ? (
-        <div className="profile_wrapper">
+        <div className="profile-wrapper">
           <img
             onClick={handleClick}
             src={zodiac}
-            className="left_panel"
+            className="left-panel"
             alt="zodiac"
           />
           <div className="right-panel">
