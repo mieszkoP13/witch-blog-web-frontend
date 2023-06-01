@@ -61,10 +61,12 @@
 }
 
 .left_panel {
-  background-color: var(--black);
+  background-color: var(--white);
   width: 100px;
   height: 100px;
   margin: 5vh 5vw;
+  padding: 5px;
+  border: 2px solid var(--black);
 }
 
 .profile-it {

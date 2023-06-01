@@ -12,7 +12,25 @@ const EditPopUp = (props) => {
 
   const edit = () => {
     props.setShow(false);
-    const data = { [props.dataToEdit]: input };
+    let data;
+    if (props.dataToEdit === "birthDate") {
+      const date = new Date(input);
+      const string =
+        date.getDate() +
+        "-" +
+        (date.getMonth() + 1) +
+        "-" +
+        date.getFullYear() +
+        " " +
+        date.getHours() +
+        ":" +
+        date.getMinutes() +
+        ":" +
+        date.getSeconds();
+      data = { [props.dataToEdit]: string };
+    } else {
+      data = { [props.dataToEdit]: input };
+    }
     const config = {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -26,7 +44,10 @@ const EditPopUp = (props) => {
       )
       .then(() => {
         const field = document.querySelector("#" + props.dataToEdit + "-field");
-        field.textContent = input;
+        if (props.dataToEdit === "birthDate") {
+          const date = new Date(input);
+          field.textContent = date.toLocaleString("pl-PL");
+        } else field.textContent = input;
       });
   };
 
@@ -34,7 +55,7 @@ const EditPopUp = (props) => {
     <div className="edit-popup">
       <input
         className="input-edit-popup"
-        type="text"
+        type={props.dataToEdit === "birthDate" ? "datetime-local" : "text"}
         defaultValue={props.dataValue}
         onChange={handleInputChange}
       ></input>
