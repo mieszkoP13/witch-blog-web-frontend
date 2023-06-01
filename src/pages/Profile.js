@@ -105,11 +105,20 @@ const Profile = () => {
     return signs[month];
   };
 
+  const handleClick = () => {
+    navigate("/Horoscopes");
+  };
+
   return (
     <>
       {profile ? (
         <div className="profile_wrapper">
-          <img src={zodiac} className="left_panel" alt="zodiac" />
+          <img
+            onClick={handleClick}
+            src={zodiac}
+            className="left_panel"
+            alt="zodiac"
+          />
           <div className="right-panel">
             <div className="profile-it">
               <span className="profile-it-txt">Email:</span>
