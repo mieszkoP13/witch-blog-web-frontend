@@ -59,31 +59,31 @@ const DivinationsClassic = (props) => {
   }, []);
 
   return (
-    <div className="divinations_wrapper">
+    <div className="divinationsC-wrapper">
       {loading ? (
-        <div className="loading_wrapper">
-          <div className="loading_spin"></div>
-          <div className="loading_text">Consulting Ezoteriusz</div>
+        <div className="divinationsC-loading-wrapper">
+          <div className="divinationsC-loading-spin"></div>
+          <div className="divinationsC-loading-text">Consulting Ezoteriusz</div>
         </div>
       ) : (
         <>
           <div
             onMouseEnter={() => setActive(true)}
-            className={active ? "cards_wrapper active" : "cards_wrapper"}
+            className={active ? "cards-wrapper active" : "cards-wrapper"}
           >
-            <div className="card_container">
+            <div className="card-container">
               <Card base64={cards[0].base64} updateFlip={updateFlip} id={0} />
             </div>
-            <div className="card_container">
+            <div className="card-container">
               <Card base64={cards[1].base64} updateFlip={updateFlip} id={1} />
             </div>
-            <div className="card_container">
+            <div className="card-container">
               <Card base64={cards[2].base64} updateFlip={updateFlip} id={2} />
             </div>
           </div>
           <button
             onClick={() => allCardsFlipped && setReveal(true)}
-            className="button divination-button"
+            className="button-divinC"
             type="submit"
           >
             Channel the medium
@@ -92,7 +92,7 @@ const DivinationsClassic = (props) => {
       )}
 
       {reveal ? (
-        <PopUp setShow={setReveal}>
+        <PopUp setShow={setReveal} defaultBtnText="Ok">
           <h2 className="meaning-h2">{cards[0].fortune_telling[0]}</h2>
           <h2 className="meaning-h2">{cards[1].fortune_telling[0]}</h2>
           <h2 className="meaning-h2">{cards[2].fortune_telling[0]}</h2>

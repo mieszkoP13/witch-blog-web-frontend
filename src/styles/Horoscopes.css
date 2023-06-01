@@ -1,27 +1,61 @@
 .zodiac-div {
-  height: 12vh;
-  width: 12vh;
-  margin: 0.5vh;
-  padding: 0;
+  height: 9.4vw;
+  width: 9.4vw;
+  margin: 0.3vw;
+  padding: 0vw;
 }
+
+.wrap-horoscope {
+  top: 50%;
+  left: 50%;
+  margin: -14vw 0 0 -30vw;
+  width: 60vw;
+  height: 28vw;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+}
+
 .box-horoscope {
-  width: 78vh;
+  width: 100%;
   height: auto;
   display: flex;
   flex-direction: row;
   overflow: hidden;
   flex-wrap: wrap;
 }
-.wrap-horoscope {
-  width: 100vw;
-  height: 100vh;
+
+.box-horoscope-2 {
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  align-content: center;
 }
+
+.button-horoscope {
+  cursor: pointer;
+  width: auto;
+  text-decoration: none;
+  color: var(--black);
+  border: solid var(--black) 1px;
+  background-color: var(--white);
+  padding: 10px 50px;
+  margin: 5px;
+  border-radius: 10px;
+  font-size: 1.4vw;
+}
+
+.button-horoscope:hover {
+  color: var(--white);
+  background-color: var(--black);
+}
+
 .btn-horoscope {
-  margin-top: 10vh;
+  align-self: center;
 }
 
 .horoscope-result {
@@ -38,5 +72,53 @@
   50% {
     border-color: var(--white);
     color: var(--white);
+  }
+}
+
+@media only screen and (max-height: 52vw) {
+  .wrap-horoscope {
+    top: 28vw;
+    left: 50%;
+    margin: -16vw 0 0 -30vw;
+    width: 60vw;
+    height: 32vw;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .wrap-horoscope {
+    top: 45vw;
+    left: 50%;
+    margin: -14vw 0 0 -48vw;
+    width: 96vw;
+    height: 90vw;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+  }
+
+  .zodiac-div {
+    height: 22vw;
+    width: 22vw;
+    margin: 0.8vw;
+    padding: 0vw;
+  }
+
+  .button-horoscope {
+    cursor: pointer;
+    width: auto;
+    text-decoration: none;
+    color: var(--black);
+    border: solid var(--black) 1px;
+    background-color: var(--white);
+    padding: 10px 50px;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: 3vw;
   }
 }

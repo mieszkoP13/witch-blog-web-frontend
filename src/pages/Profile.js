@@ -59,8 +59,8 @@ const Profile = () => {
   return (
     <>
       {profile ? (
-        <div className="profile_wrapper">
-          <div className="left_panel"></div>
+        <div className="profile-wrapper">
+          <div className="left-panel"></div>
           <div className="right-panel">
             <div className="profile-it">
               <span className="profile-it-txt">Email:</span>
@@ -78,7 +78,7 @@ const Profile = () => {
                   dataValue={profile.firstName}
                 />
               ) : (
-                <div className="edit_wrap">
+                <div className="edit-wrap">
                   <span id="firstName-field" className="profile-it-txt">
                     {profile.firstName}
                   </span>
@@ -103,7 +103,7 @@ const Profile = () => {
                   dataValue={profile.lastName}
                 />
               ) : (
-                <div className="edit_wrap">
+                <div className="edit-wrap">
                   <span id="lastName-field" className="profile-it-txt">
                     {profile.lastName}
                   </span>
@@ -135,7 +135,7 @@ const Profile = () => {
           </div>
         </div>
       ) : (
-        <div className="login_wrapper">
+        <div className="login-wrapper">
           <Link className="button" to="/SignIn">
             Sign In
           </Link>

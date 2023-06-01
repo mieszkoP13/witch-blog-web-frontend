@@ -25,24 +25,29 @@ button {
 
 html::-webkit-scrollbar {
   display: block;
-  width: 15px;
+  width: 10px;
   max-width: 2vw;
   height: 20px;
+  border-radius: 10px;
 }
+
 html::-webkit-scrollbar-track {
   background: transparent;
   height: 20px;
+  width: 10px;
+  border-radius: 10px;
 }
 
 html::-webkit-scrollbar-thumb {
-  background-color: var(--pink-lighter);
+  background-color: var(--black);
   border-right: none;
   border-left: none;
+  border-radius: 10px;
 }
 
 body,
 html {
   max-width: 100%;
   max-height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }

@@ -4,7 +4,7 @@ import "../styles/Divinations.css";
 
 const Divinations = () => {
   return (
-    <div className="divinations_wrapper">
+    <div className="divinations-wrapper">
       <Link to="/Divinations/Classic" className="div-button">
         Classic 3-card Tarot Reading
       </Link>

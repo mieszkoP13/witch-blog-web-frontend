@@ -1,4 +1,4 @@
-.login_wrapper {
+.login-wrapper {
   width: 100vw;
   height: 100vh;
   margin-top: 30vh;
@@ -40,7 +40,7 @@
   background-color: var(--black);
 }
 
-.profile_wrapper {
+.profile-wrapper {
   width: 100vw;
   height: 50vh;
   position: absolute;
@@ -51,7 +51,7 @@
   align-items: flex-start;
 }
 
-.right_panel {
+.right-panel {
   display: flex;
   flex-direction: column;
   justify-content: left;
@@ -60,7 +60,7 @@
   padding-right: 10vw;
 }
 
-.left_panel {
+.left-panel {
   background-color: var(--black);
   width: 100px;
   height: 100px;
@@ -94,7 +94,7 @@
   font-size: 2vh;
 }
 
-.edit_wrap {
+.edit-wrap {
   display: flex;
   align-items: center;
 }

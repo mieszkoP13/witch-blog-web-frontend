@@ -1,62 +1,89 @@
-.card_container {
+.divinationsC-wrapper {
+  top: 50%;
+  left: 50%;
+  margin: -22vw 0 0 -30vw;
+  width: 60vw;
+  height: 44vw;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+
+.cards-wrapper {
+  flex: 1 1 auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  justify-content: center;
+  align-content: center;
+}
+
+.card-container {
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   width: 15vw;
   height: auto;
   aspect-ratio: 469/850;
-  position: fixed;
 }
 
-.divination-button {
-  position: fixed;
-  bottom: 20vh;
+.cards-wrapper.active .card-container:nth-child(1) {
+  transform: translateX(-5vw) translateY(10vh);
 }
-.cards_wrapper.active .card_container:nth-child(1) {
-  transform: translateX(-20vw) translateY(20vh);
-}
-.cards_wrapper.active .card_container:nth-child(3) {
-  transform: translateX(20vw) translateY(20vh);
+.cards-wrapper.active .card-container:nth-child(3) {
+  transform: translateX(5vw) translateY(10vh);
 }
 
-.divinations_wrapper {
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+.button-divinC {
+  cursor: pointer;
+  width: auto;
+  text-decoration: none;
+  color: var(--black);
+  border: solid var(--black) 1px;
+  background-color: var(--white);
+  padding: 10px 50px;
+  margin: 5px;
+  margin-bottom: 2vw;
+  border-radius: 10px;
+  font-size: 1.2vw;
 }
 
-.cards_wrapper {
-  width: 15vw;
-  height: auto;
-  aspect-ratio: 469/850;
-  position: fixed;
-  top: 20vh;
+.button-divinC:hover {
+  color: var(--white);
+  background-color: var(--black);
 }
 
 /* loading animation */
 
-.loading_wrapper {
+.divinationsC-loading-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -5vw 0 0 -5vw;
+  width: 10vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  align-content: center;
 }
 
-.loading_spin {
+.divinationsC-loading-spin {
   position: sticky;
-  width: 64px;
-  height: 64px;
-  border: 8px solid;
+  width: 4vw;
+  height: 4vw;
+  border: 0.5vw solid;
   border-color: var(--black) transparent var(--black) transparent;
   border-radius: 50%;
   animation: spin-anim 1.2s linear infinite;
 }
 
-.loading_text {
-  margin-top: 2vh;
-  font-size: 2vh;
+.divinationsC-loading-text {
+  margin-top: 1vw;
+  font-size: 1.5vw;
   animation-name: blinking;
   animation-duration: 2s;
   animation-iteration-count: 100;
@@ -74,5 +101,96 @@
 @keyframes blinking {
   50% {
     color: var(--white);
+  }
+}
+
+@media only screen and (max-height: 68vw) {
+  .divinationsC-wrapper {
+    top: 34vw;
+    left: 50%;
+    margin: -22vw 0 0 -30vw;
+    width: 60vw;
+    height: 44vw;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .divinationsC-wrapper {
+    top: 52vw;
+    left: 50%;
+    margin: -22vw 0 0 -48vw;
+    width: 96vw;
+    height: 60vw;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: flex-start;
+    align-content: flex-start;
+  }
+
+  .card-container {
+    -webkit-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+    width: 23vw;
+    height: auto;
+    aspect-ratio: 469/850;
+  }
+
+  .cards-wrapper.active .card-container:nth-child(1) {
+    transform: translateX(-5vw) translateY(10vh);
+  }
+  .cards-wrapper.active .card-container:nth-child(3) {
+    transform: translateX(5vw) translateY(10vh);
+  }
+
+  .button-divinC {
+    cursor: pointer;
+    width: auto;
+    text-decoration: none;
+    color: var(--black);
+    border: solid var(--black) 1px;
+    background-color: var(--white);
+    padding: 10px 50px;
+    margin: 5px;
+    margin-bottom: 2vw;
+    border-radius: 10px;
+    font-size: 2.2vw;
+  }
+
+  .divinationsC-loading-wrapper {
+    position: absolute;
+    top: 40vw;
+    left: 50%;
+    margin: -5vw 0 0 -7vw;
+    width: 14vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+  }
+
+  .divinationsC-loading-spin {
+    position: sticky;
+    width: 9vw;
+    height: 9vw;
+    border: 0.8vw solid;
+    border-color: var(--black) transparent var(--black) transparent;
+    border-radius: 50%;
+    animation: spin-anim 1.2s linear infinite;
+  }
+  
+  .divinationsC-loading-text {
+    margin-top: 1vw;
+    font-size: 2.5vw;
+    animation-name: blinking;
+    animation-duration: 2s;
+    animation-iteration-count: 100;
   }
 }

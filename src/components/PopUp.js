@@ -1,27 +1,23 @@
 import React from "react";
 import "../styles/PopUp.css";
 
-const DeletePopUp = (props) => {
-  const customFunction = () => {
-    if (props.customFunction) {
-      props.customFunction();
-    }
-    props.setShow(false);
-  };
+const PopUp = ({children, setShow, customFunction, customFunctionBtnText, defaultBtnText}) => {
 
   return (
     <div className={"popup"}>
-      {props.children}
+      {children}
       <div className="button-div">
-        <button className="popup-button" onClick={customFunction}>
-          Ok
-        </button>
-        <button className="popup-button" onClick={() => props.setShow(false)}>
-          Cancel
+        {customFunction ? (
+          <button className="popup-button" onClick={() => { customFunction(); setShow(false); }}>
+            {customFunctionBtnText}
+          </button> ) : (<></>)
+        }
+        <button className="popup-button" onClick={() => setShow(false)}>
+          {defaultBtnText}
         </button>
       </div>
     </div>
   );
 };
 
-export default DeletePopUp;
+export default PopUp;

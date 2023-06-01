@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import "../styles/SignIn.css";
 import { useNavigate } from "react-router-dom";
-import DeletePopUp from "../components/PopUp";
+import PopUp from "../components/PopUp";
 
 const RE_PASSWD = /^\S.{8,}$/;
 // https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript
@@ -85,13 +85,13 @@ const SignIn = (props) => {
         </div>
       )}
       {showPopUp ? (
-        <DeletePopUp setShow={setShowPopUp}>
+        <PopUp setShow={setShowPopUp} defaultBtnText="Ok">
           <h1 className="sign-in-err-h1">Sign up error</h1>
           <span>
             Given Email/Password are wrong or your Email Address haven't been
             confirmed.
           </span>
-        </DeletePopUp>
+        </PopUp>
       ) : (
         <></>
       )}

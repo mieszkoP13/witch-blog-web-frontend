@@ -40,17 +40,17 @@ const Horoscopes = () => {
             </div>
           ))}
         </div>
-        <button
-          onClick={() => select && setReveal(true)}
-          className={
-            select ? "btn-horoscope button blinking" : "btn-horoscope button"
-          }
-          type="submit"
-        >
-          Reveal your fate
-        </button>
+        <div className="box-horoscope-2">
+          <button
+            onClick={() => select && setReveal(true)}
+            className={`btn-horoscope button-horoscope ${select ? " blinking" : null}`}
+            type="submit"
+          >
+            Reveal your fate
+          </button>
+        </div>
         {reveal ? (
-          <PopUp setShow={setReveal}>
+          <PopUp setShow={setReveal} defaultBtnText="Ok">
             <h1 className="horoscope-result-h1">These are your results:</h1>
             <span className="horoscope-result-h2">{HOROSCOPES[selectId]}</span>
           </PopUp>

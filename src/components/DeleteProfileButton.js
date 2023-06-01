@@ -32,7 +32,7 @@ const DeleteProfileButton = (props) => {
           >
             Delete Account
           </button>
-          <PopUp setShow={setShowPopUp} customFunction={deleteProfile}>
+          <PopUp setShow={setShowPopUp} customFunction={deleteProfile} customFunctionBtnText="Delete" defaultBtnText="Cancel">
             <h1 className="sign-in-err-h1">
               Are you sure you want to delete your account?
             </h1>

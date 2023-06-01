@@ -1,19 +1,19 @@
 .zodiac {
-  height: 10vh;
-  width: 10vh;
+  height: 8.5vw;
+  width: 8.5vw;
   cursor: pointer;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
   background-repeat: no-repeat;
   background-size: cover;
   aspect-ratio: 1/1;
   background-color: var(--white);
   border: solid 1px var(--black);
-  padding: 1vh;
+  padding: 0.5vw;
   border-radius: 10px;
 }
 
 .zodiac:hover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
   filter: invert(100%);
 }
@@ -21,4 +21,19 @@
 .select .zodiac {
   -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
   filter: invert(100%);
+}
+
+@media only screen and (max-width: 1199px) {
+  .zodiac {
+    height: 18.6vw;
+    width: 18.6vw;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 1/1;
+    background-color: var(--white);
+    border: solid 1px var(--black);
+    padding: 1.5vw;
+    border-radius: 10px;
+  }
 }
