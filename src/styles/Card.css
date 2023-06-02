@@ -40,6 +40,10 @@
   left: 0;
 }
 
+.img-vert {
+  --rotate-y: -180deg;
+}
+
 @media only screen and (max-width: 1199px) {
   .tarot-card {
     width: 23vw;

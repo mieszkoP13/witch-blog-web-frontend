@@ -1,17 +1,20 @@
 import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import "../styles/DivinationsClassic.css";
+import useTokenStatus from "../hooks/useTokenStatus";
 import Card from "../components/Card";
 import PopUp from "../components/PopUp";
 
 const DivinationsClassic = (props) => {
   const [active, setActive] = useState(false);
   const effectRan = useRef(false);
+  const isToken = useTokenStatus();
   const [cards] = useState([
-    { name: "", fortune_telling: [], base64: "", isFlipped: false },
-    { name: "", fortune_telling: [], base64: "", isFlipped: false },
-    { name: "", fortune_telling: [], base64: "", isFlipped: false },
+    { name: "", base64: "", reversed: false, isFlipped: false },
+    { name: "", base64: "", reversed: false, isFlipped: false },
+    { name: "", base64: "", reversed: false, isFlipped: false },
   ]);
+  const [fortune, setFortune] = useState("")
   const [loading, setLoading] = useState(true);
   const [reveal, setReveal] = useState(false);
   const [allCardsFlipped, setAllCardsFlipped] = useState(false);
@@ -26,16 +29,17 @@ const DivinationsClassic = (props) => {
     // prevents fetching data twice with strict mode
     if (effectRan.current === false) {
       setLoading(true);
-      axios
-        .get(
-          `https://witchblog.azurewebsites.net/api/v1/tarot/random?numOfCards=3`
-        )
+      axios.post(`https://witchblog.azurewebsites.net/api/v1/divination`,{},{
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
         .then((res) => {
+
+          setFortune(res.data.prediction)
           for (let i = 0; i < 3; ++i) {
-            Object.assign(cards[i], { name: res.data[i].name });
-            Object.assign(cards[i], {
-              fortune_telling: res.data[i].fortune_telling,
-            });
+            Object.assign(cards[i], { name: res.data.cardsResponse[i].card.name });
+            Object.assign(cards[i], { reversed: res.data.cardsResponse[i].reversed,});
           }
 
           return axios.post(
@@ -59,6 +63,8 @@ const DivinationsClassic = (props) => {
   }, []);
 
   return (
+    <>
+    {isToken ? (
     <div className="divinationsC-wrapper">
       {loading ? (
         <div className="divinationsC-loading-wrapper">
@@ -72,13 +78,13 @@ const DivinationsClassic = (props) => {
             className={active ? "cards-wrapper active" : "cards-wrapper"}
           >
             <div className="card-container">
-              <Card base64={cards[0].base64} updateFlip={updateFlip} id={0} />
+              <Card base64={cards[0].base64} reversed={cards[0].reversed} updateFlip={updateFlip} id={0} />
             </div>
             <div className="card-container">
-              <Card base64={cards[1].base64} updateFlip={updateFlip} id={1} />
+              <Card base64={cards[1].base64} reversed={cards[1].reversed} updateFlip={updateFlip} id={1} />
             </div>
             <div className="card-container">
-              <Card base64={cards[2].base64} updateFlip={updateFlip} id={2} />
+              <Card base64={cards[2].base64} reversed={cards[2].reversed} updateFlip={updateFlip} id={2} />
             </div>
           </div>
           <button
@@ -93,14 +99,13 @@ const DivinationsClassic = (props) => {
 
       {reveal ? (
         <PopUp setShow={setReveal} defaultBtnText="Ok">
-          <h2 className="meaning-h2">{cards[0].fortune_telling[0]}</h2>
-          <h2 className="meaning-h2">{cards[1].fortune_telling[0]}</h2>
-          <h2 className="meaning-h2">{cards[2].fortune_telling[0]}</h2>
+          <h2 className="meaning-h2">{fortune}</h2>
         </PopUp>
       ) : (
         <></>
       )}
-    </div>
+    </div>):(<></>)}
+  </>
   );
 };
 
