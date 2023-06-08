@@ -23,6 +23,7 @@ const RouteSwitch = () => {
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/Horoscopes" element={<Horoscopes />} />
         <Route path="/Articles" element={<Articles />} />
+        <Route path="/Articles/:pageNo" element={<Articles />} />
         <Route path="/Divinations" element={<Divinations />} />
         <Route path="/Divinations/Classic" element={<DivinationsClassic />} />
         <Route path="/Divinations/Love" element={<DivinationsLove />} />
