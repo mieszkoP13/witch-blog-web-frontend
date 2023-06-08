@@ -3,18 +3,24 @@ import axios from "axios";
 import "../styles/DivinationsClassic.css";
 import Card from "../components/Card";
 import PopUp from "../components/PopUp";
+import useTokenStatus from "../hooks/useTokenStatus";
+import { useNavigate } from "react-router-dom";
 
 const DivinationsClassic = (props) => {
   const [active, setActive] = useState(false);
+  const isToken = useTokenStatus();
   const effectRan = useRef(false);
   const [cards] = useState([
-    { name: "", fortune_telling: [], base64: "", isFlipped: false },
-    { name: "", fortune_telling: [], base64: "", isFlipped: false },
-    { name: "", fortune_telling: [], base64: "", isFlipped: false },
+    { name: "", base64: "", reversed: false, isFlipped: false },
+    { name: "", base64: "", reversed: false, isFlipped: false },
+    { name: "", base64: "", reversed: false, isFlipped: false },
   ]);
+  const [fortune, setFortune] = useState("");
   const [loading, setLoading] = useState(true);
   const [reveal, setReveal] = useState(false);
   const [allCardsFlipped, setAllCardsFlipped] = useState(false);
+  const [logReveal, setLogReveal] = useState(true);
+  const navigate = useNavigate();
 
   const updateFlip = (_flip, _id) => {
     _flip && Object.assign(cards[_id], { isFlipped: true });
@@ -27,14 +33,23 @@ const DivinationsClassic = (props) => {
     if (effectRan.current === false) {
       setLoading(true);
       axios
-        .get(
-          `https://witchblog.azurewebsites.net/api/v1/tarot/random?numOfCards=3`
+        .post(
+          `https://witchblog.azurewebsites.net/api/v1/divination`,
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+            },
+          }
         )
         .then((res) => {
+          setFortune(res.data.prediction);
           for (let i = 0; i < 3; ++i) {
-            Object.assign(cards[i], { name: res.data[i].name });
             Object.assign(cards[i], {
-              fortune_telling: res.data[i].fortune_telling,
+              name: res.data.cardsResponse[i].card.name,
+            });
+            Object.assign(cards[i], {
+              reversed: res.data.cardsResponse[i].reversed,
             });
           }
 
@@ -59,48 +74,80 @@ const DivinationsClassic = (props) => {
   }, []);
 
   return (
-    <div className="divinations_wrapper">
-      {loading ? (
-        <div className="loading_wrapper">
-          <div className="loading_spin"></div>
-          <div className="loading_text">Consulting Ezoteriusz</div>
+    <>
+      {isToken ? (
+        <div className="divinations_wrapper">
+          {loading ? (
+            <div className="loading_wrapper">
+              <div className="loading_spin"></div>
+              <div className="loading_text">Consulting Ezoteriusz</div>
+            </div>
+          ) : (
+            <>
+              <div
+                onMouseEnter={() => setActive(true)}
+                className={active ? "cards_wrapper active" : "cards_wrapper"}
+              >
+                <div className="card_container">
+                  <Card
+                    base64={cards[0].base64}
+                    reversed={cards[0].reversed}
+                    updateFlip={updateFlip}
+                    id={0}
+                  />
+                </div>
+                <div className="card_container">
+                  <Card
+                    base64={cards[1].base64}
+                    reversed={cards[1].reversed}
+                    updateFlip={updateFlip}
+                    id={1}
+                  />
+                </div>
+                <div className="card_container">
+                  <Card
+                    base64={cards[2].base64}
+                    reversed={cards[2].reversed}
+                    updateFlip={updateFlip}
+                    id={2}
+                  />
+                </div>
+              </div>
+              <button
+                onClick={() => allCardsFlipped && setReveal(true)}
+                className="button divination-button"
+                type="submit"
+              >
+                Channel the medium
+              </button>
+            </>
+          )}
+
+          {reveal ? (
+            <PopUp setShow={setReveal}>
+              <h2 className="meaning-h2">{fortune}</h2>
+            </PopUp>
+          ) : (
+            <></>
+          )}
         </div>
       ) : (
         <>
-          <div
-            onMouseEnter={() => setActive(true)}
-            className={active ? "cards_wrapper active" : "cards_wrapper"}
-          >
-            <div className="card_container">
-              <Card base64={cards[0].base64} updateFlip={updateFlip} id={0} />
-            </div>
-            <div className="card_container">
-              <Card base64={cards[1].base64} updateFlip={updateFlip} id={1} />
-            </div>
-            <div className="card_container">
-              <Card base64={cards[2].base64} updateFlip={updateFlip} id={2} />
-            </div>
-          </div>
-          <button
-            onClick={() => allCardsFlipped && setReveal(true)}
-            className="button divination-button"
-            type="submit"
-          >
-            Channel the medium
-          </button>
+          {logReveal ? (
+            <PopUp
+              setShow={setLogReveal}
+              customFunction={() => navigate("/users/profile")}
+            >
+              <h2 className="meaning-h2">
+                You need to be logged in to access this page
+              </h2>
+            </PopUp>
+          ) : (
+            <></>
+          )}
         </>
       )}
-
-      {reveal ? (
-        <PopUp setShow={setReveal}>
-          <h2 className="meaning-h2">{cards[0].fortune_telling[0]}</h2>
-          <h2 className="meaning-h2">{cards[1].fortune_telling[0]}</h2>
-          <h2 className="meaning-h2">{cards[2].fortune_telling[0]}</h2>
-        </PopUp>
-      ) : (
-        <></>
-      )}
-    </div>
+    </>
   );
 };
 

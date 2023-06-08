@@ -39,3 +39,7 @@
 .flip_container .front {
   left: 0;
 }
+
+.reversed {
+  rotate: 180deg;
+}

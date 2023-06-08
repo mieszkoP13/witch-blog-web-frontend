@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import back from "../imgs/light/back.png";
 import "../styles/Card.css";
 
-const Card = ({ base64, updateFlip, id }) => {
+const Card = ({ base64, reversed, updateFlip, id }) => {
   const [flip, setFlip] = useState(false);
 
   const flipOnce = () => setFlip(true);
@@ -22,7 +22,7 @@ const Card = ({ base64, updateFlip, id }) => {
       />
       <img
         onClick={flipOnce}
-        className="tarot-card back"
+        className={reversed ? "reversed tarot-card back" : "tarot-card back"}
         src={`data:image/jpeg;base64,${base64}`}
         alt="Card"
       />
