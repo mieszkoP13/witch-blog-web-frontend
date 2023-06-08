@@ -9,7 +9,7 @@
   padding: 0;
 }
 
-.flip_container {
+.flip-container {
   width: 15vw;
   aspect-ratio: 469/850;
   transform-style: preserve-3d;
@@ -18,12 +18,12 @@
     translateY(var(--translate-y, 0));
 }
 
-.flip_container:hover {
+.flip-container:hover {
   --translate-y: -2px;
   opacity: 1;
 }
 
-.flip_container.flip {
+.flip-container.flip {
   --rotate-y: -180deg;
 }
 
@@ -32,11 +32,11 @@
   backface-visibility: hidden;
 }
 
-.flip_container .back {
+.flip-container .back {
   transform: rotateY(-180deg);
 }
 
-.flip_container .front {
+.flip-container .front {
   left: 0;
 }
 

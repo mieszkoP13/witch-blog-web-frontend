@@ -20,12 +20,12 @@ const NavBar = () => {
       <nav>
         <ul>
           <li>
-            <Link className="nav_link top_left" to="/Articles">
+            <Link className="nav-link top-left" to="/Articles">
               Articles
             </Link>
           </li>
           <li>
-            <Link className="nav_link top_right" to="/users/profile">
+            <Link className="nav-link top-right" to="/users/profile">
               Profile
             </Link>
           </li>
@@ -33,8 +33,8 @@ const NavBar = () => {
             <Link
               className={
                 bottomActive
-                  ? "nav_link bottom_left open_socials"
-                  : "nav_link bottom_left"
+                  ? "nav-link bottom-left open-socials"
+                  : "nav-link bottom-left"
               }
               to="/Horoscopes"
             >
@@ -45,8 +45,8 @@ const NavBar = () => {
             <Link
               className={
                 bottomActive
-                  ? "nav_link bottom_right open_socials"
-                  : "nav_link bottom_right"
+                  ? "nav-link bottom-right open-socials"
+                  : "nav-link bottom-right"
               }
               to="/Divinations"
             >
@@ -60,8 +60,8 @@ const NavBar = () => {
               onMouseLeave={() => setTopActive(false)}
               className={
                 topActive
-                  ? "cards_div nav_link top_center active"
-                  : "cards_div nav_link top_center"
+                  ? "cards-div nav-link top-center active"
+                  : "cards-div nav-link top-center"
               }
             >
               <div className="card"></div>
@@ -74,19 +74,19 @@ const NavBar = () => {
               onClick={toggleActive}
               className={
                 bottomActive
-                  ? "plus nav_link bottom_center active open_socials"
-                  : "plus nav_link bottom_center"
+                  ? "plus nav-link bottom-center active open-socials"
+                  : "plus nav-link bottom-center"
               }
             >
-              <span className="plus_bar plus_bar_top"></span>
-              <span className="plus_bar plus_bar_bottom"></span>
+              <span className="plus-bar plus-bar-top"></span>
+              <span className="plus-bar plus-bar-bottom"></span>
             </div>
           </li>
         </ul>
       </nav>
-      <div className={bottomActive ? "socials open_socials" : "socials"}>
+      <div className={bottomActive ? "socials open-socials" : "socials"}>
         <a
-          className="social_link"
+          className="social-link"
           href="https://www.facebook.com/profile.php?id=100091842926056"
         >
           <img

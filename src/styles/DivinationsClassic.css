@@ -1,4 +1,4 @@
-.card_container {
+.card-container {
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   width: 15vw;
@@ -11,14 +11,14 @@
   position: fixed;
   bottom: 20vh;
 }
-.cards_wrapper.active .card_container:nth-child(1) {
+.cards-wrapper.active .card-container:nth-child(1) {
   transform: translateX(-20vw) translateY(20vh);
 }
-.cards_wrapper.active .card_container:nth-child(3) {
+.cards-wrapper.active .card-container:nth-child(3) {
   transform: translateX(20vw) translateY(20vh);
 }
 
-.divinations_wrapper {
+.divinations-wrapper {
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -27,7 +27,7 @@
   align-items: center;
 }
 
-.cards_wrapper {
+.cards-wrapper {
   width: 15vw;
   height: auto;
   aspect-ratio: 469/850;
@@ -37,14 +37,14 @@
 
 /* loading animation */
 
-.loading_wrapper {
+.loading-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.loading_spin {
+.loading-spin {
   position: sticky;
   width: 64px;
   height: 64px;
@@ -54,7 +54,7 @@
   animation: spin-anim 1.2s linear infinite;
 }
 
-.loading_text {
+.loading-text {
   margin-top: 2vh;
   font-size: 2vh;
   animation-name: blinking-text;

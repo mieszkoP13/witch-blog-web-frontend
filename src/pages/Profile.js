@@ -116,11 +116,11 @@ const Profile = () => {
   return (
     <>
       {profile ? (
-        <div className="profile_wrapper">
+        <div className="profile-wrapper">
           <img
             onClick={handleClick}
             src={zodiac}
-            className="profile_picture"
+            className="profile-picture"
             alt="zodiac"
           />
           <div className="right-panel">
@@ -140,7 +140,7 @@ const Profile = () => {
                   dataValue={profile.firstName}
                 />
               ) : (
-                <div className="edit_wrap">
+                <div className="edit-wrap">
                   <span id="firstName-field" className="profile-it-txt">
                     {profile.firstName}
                   </span>
@@ -165,7 +165,7 @@ const Profile = () => {
                   dataValue={profile.lastName}
                 />
               ) : (
-                <div className="edit_wrap">
+                <div className="edit-wrap">
                   <span id="lastName-field" className="profile-it-txt">
                     {profile.lastName}
                   </span>
@@ -190,7 +190,7 @@ const Profile = () => {
                   dataValue={profile.birthDate}
                 />
               ) : (
-                <div className="edit_wrap">
+                <div className="edit-wrap">
                   <span id="birthDate-field" className="profile-it-txt">
                     {profile.birthDate}
                   </span>
@@ -219,7 +219,7 @@ const Profile = () => {
           </div>
         </div>
       ) : (
-        <div className="login_wrapper">
+        <div className="login-wrapper">
           <Link className="button" to="/SignIn">
             Sign In
           </Link>

@@ -76,19 +76,19 @@ const DivinationsClassic = (props) => {
   return (
     <>
       {isToken ? (
-        <div className="divinations_wrapper">
+        <div className="divinations-wrapper">
           {loading ? (
-            <div className="loading_wrapper">
-              <div className="loading_spin"></div>
-              <div className="loading_text">Consulting Ezoteriusz</div>
+            <div className="loading-wrapper">
+              <div className="loading-spin"></div>
+              <div className="loading-text">Consulting Ezoteriusz</div>
             </div>
           ) : (
             <>
               <div
                 onMouseEnter={() => setActive(true)}
-                className={active ? "cards_wrapper active" : "cards_wrapper"}
+                className={active ? "cards-wrapper active" : "cards-wrapper"}
               >
-                <div className="card_container">
+                <div className="card-container">
                   <Card
                     base64={cards[0].base64}
                     reversed={cards[0].reversed}
@@ -96,7 +96,7 @@ const DivinationsClassic = (props) => {
                     id={0}
                   />
                 </div>
-                <div className="card_container">
+                <div className="card-container">
                   <Card
                     base64={cards[1].base64}
                     reversed={cards[1].reversed}
@@ -104,7 +104,7 @@ const DivinationsClassic = (props) => {
                     id={1}
                   />
                 </div>
-                <div className="card_container">
+                <div className="card-container">
                   <Card
                     base64={cards[2].base64}
                     reversed={cards[2].reversed}

@@ -13,7 +13,7 @@ const Card = ({ base64, reversed, updateFlip, id }) => {
   }, [flip]);
 
   return (
-    <div className={flip ? "flip flip_container" : "flip_container"}>
+    <div className={flip ? "flip flip-container" : "flip-container"}>
       <img
         onClick={flipOnce}
         className="tarot-card front"
