@@ -109,6 +109,10 @@ const Profile = () => {
     navigate("/Horoscopes");
   };
 
+  const handleClickHistory = () => {
+    navigate("/Divinations/History");
+  };
+
   return (
     <>
       {profile ? (
@@ -116,7 +120,7 @@ const Profile = () => {
           <img
             onClick={handleClick}
             src={zodiac}
-            className="left_panel"
+            className="profile_picture"
             alt="zodiac"
           />
           <div className="right-panel">
@@ -206,6 +210,11 @@ const Profile = () => {
                 Log out
               </button>
               <DeleteProfileButton email={profile.email} />
+            </div>
+            <div className="profile-it profile-center">
+              <button className="button-small" onClick={handleClickHistory}>
+                Divinations history
+              </button>
             </div>
           </div>
         </div>
