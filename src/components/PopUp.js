@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/PopUp.css";
 
-const DeletePopUp = (props) => {
+const PopUp = (props) => {
   const customFunction = () => {
     if (props.customFunction) {
       props.customFunction();
@@ -24,4 +24,4 @@ const DeletePopUp = (props) => {
   );
 };
 
-export default DeletePopUp;
+export default PopUp;
