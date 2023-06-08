@@ -1,28 +1,6 @@
 import "../styles/History.css";
-import { useEffect, useState } from "react";
-// import axios from "axios";
 
 const History = ({ history, images }) => {
-  //const [images, setImages] = useState({});
-  //   const [loading, setLoading] = useState(true);
-  //   const [cards] = useState([
-  //     { name: "", base64: "", reversed: false, isFlipped: false },
-  //     { name: "", base64: "", reversed: false, isFlipped: false },
-  //     { name: "", base64: "", reversed: false, isFlipped: false },
-  //   ]);
-  //   useEffect(() => {
-  //     const importAll = (r) => {
-  //       let imgs = {};
-  //       r.keys().map((item, index) => {
-  //         images[item.replace("./", "")] = r(item);
-  //       });
-  //       return imgs;
-  //     };
-  //     setImages(
-  //       importAll(require.context("../imgs/cards", false, /\.(png|jpe?g|svg)$/))
-  //     );
-  //   }, []);
-
   return (
     <>
       {history.map((data) => {
