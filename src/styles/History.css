@@ -1,0 +1,44 @@
+.history-container {
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--white);
+  color: var(--black);
+  border: solid 3px var(--black);
+  border-radius: 10px;
+  padding: 1vh 2vw;
+}
+
+.history-cards-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.history-single-card-container {
+  width: 10vw;
+  aspect-ratio: 7/12;
+  text-align: center;
+  color: var(--black);
+
+  margin-right: 0.5vw;
+  background-size: cover;
+}
+
+.history-prediction {
+  margin-left: 1vw;
+  text-align: justify;
+}
+
+.history-card-and-name-container > p {
+  text-align: center;
+  margin: 0;
+}
+
+.history-prediction {
+  font-size: larger;
+}
+
+.history-date {
+  font-weight: bold;
+  font-size: x-large;
+}

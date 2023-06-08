@@ -1,0 +1,14 @@
+.scrollable {
+  overflow-y: scroll;
+  margin-top: 13vh;
+  max-height: calc(85vh - 60px);
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+}
+.scrollable::-webkit-scrollbar {
+  display: none;
+}
+
+.history-wrapper {
+  margin-top: 20vh;
+}

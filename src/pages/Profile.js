@@ -51,11 +51,9 @@ const Profile = () => {
           })
           .then((res) => {
             const date = new Date(res.data.birthDate);
-            console.log(date);
             const stringDate = date.toLocaleString("pl-PL", {
               timeZone: "UTC",
             });
-            console.log(date.getHours());
             setZodiac(findZodiac(date));
             res.data.birthDate = stringDate;
             setProfile(res.data);

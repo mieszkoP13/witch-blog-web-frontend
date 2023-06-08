@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../styles/DeleteProfileButton.css";
 import PopUp from "./PopUp";
+import { useNavigate } from "react-router-dom";
 
 const DeleteProfileButton = (props) => {
   const [showPopUp, setShowPopUp] = useState(false);
+  const navigate = useNavigate();
   const deleteProfile = () => {
     axios
       .delete(
@@ -17,7 +19,7 @@ const DeleteProfileButton = (props) => {
       )
       .then(() => {
         localStorage.removeItem("token");
-        window.location.href = "http://localhost:3000";
+        navigate("/");
       });
   };
   return (
