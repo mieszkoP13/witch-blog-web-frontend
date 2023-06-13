@@ -48,7 +48,7 @@ const NavBar = () => {
                   ? "nav-link bottom-right open-socials"
                   : "nav-link bottom-right"
               }
-              to="/Divinations"
+              to="/Divinations/Classic"
             >
               Divinations
             </Link>
