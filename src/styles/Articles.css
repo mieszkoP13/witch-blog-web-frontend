@@ -75,9 +75,12 @@ textarea {
 
 .article-title {
     font-size: 30px;
+    margin-top: 0.5%;
+    margin-bottom: 2%
 }
 
 .article-body {
+    white-space:pre-wrap;
     font-size: 18px;
 }
 
