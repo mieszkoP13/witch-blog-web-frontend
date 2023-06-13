@@ -10,6 +10,7 @@ import Divinations from "./pages/Divinations";
 import DivinationsClassic from "./pages/DivinationsClassic";
 import DivinationsLove from "./pages/DivinationsLove";
 import DivinationsBirth from "./pages/DivinationsBirth";
+import Articles from "./pages/Articles";
 import DivinationsHistory from "./pages/DivinationsHistory";
 
 const RouteSwitch = () => {
@@ -22,6 +23,8 @@ const RouteSwitch = () => {
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/Horoscopes" element={<Horoscopes />} />
+        <Route path="/Articles" element={<Articles />} />
+        <Route path="/Articles/:pageNo" element={<Articles />} />
         <Route path="/Divinations" element={<Divinations />} />
         <Route path="Divinations/History" element={<DivinationsHistory />} />
         <Route path="/Divinations/Classic" element={<DivinationsClassic />} />

@@ -29,6 +29,7 @@ const SignIn = (props) => {
       .post("https://witchblog.azurewebsites.net/api/v1/auth/signin", data)
       .then((res) => {
         setLoading(false);
+        localStorage.setItem("roles", JSON.stringify(res.data.roles));
         localStorage.setItem("token", res.data.token);
         navigate("/users/profile");
       })

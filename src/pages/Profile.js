@@ -72,6 +72,7 @@ const Profile = () => {
 
   const logOut = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("roles");
     setProfile(null);
     window.location.reload();
   };
