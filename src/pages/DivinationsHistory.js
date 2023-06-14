@@ -76,10 +76,10 @@ const DivinationsHistory = () => {
               <div className="loading-spin"></div>
               <div className="loading-text">Reading Books of History</div>
             </div>
+          ) : history ? (
+            <History history={history} images={images} />
           ) : (
-            <>
-              <History history={history} images={images} />
-            </>
+            <p>No recent divinations</p>
           )}
         </div>
       ) : (

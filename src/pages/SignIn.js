@@ -23,7 +23,6 @@ const SignIn = (props) => {
 
   const onSubmit = (data) => {
     setLoading(true);
-    console.log(JSON.stringify(data));
 
     axios
       .post("https://witchblog.azurewebsites.net/api/v1/auth/signin", data)
