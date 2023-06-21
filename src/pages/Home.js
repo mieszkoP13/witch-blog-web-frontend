@@ -7,7 +7,7 @@ const Home = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/Divinations");
+    navigate("/Divinations/Classic");
   };
   return (
     <>
