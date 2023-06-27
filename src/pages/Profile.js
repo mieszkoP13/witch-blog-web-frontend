@@ -28,7 +28,7 @@ const Profile = () => {
   const [showPopUpDate, setShowPopUpDate] = useState(false);
   const [zodiac, setZodiac] = useState(null);
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const getData = () => {
