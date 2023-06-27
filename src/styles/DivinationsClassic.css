@@ -9,7 +9,7 @@
 
 .divination-button {
   position: fixed;
-  bottom: 10vh;
+  bottom: 15vh;
 }
 .cards-wrapper.active .card-container:nth-child(1) {
   transform: translateX(-20vw) translateY(10vh);
