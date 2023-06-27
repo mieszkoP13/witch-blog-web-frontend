@@ -3,7 +3,8 @@
   height: fit-content;
   position: fixed;
   left: 20vw;
-  top: 30vh;
+  top: 20vh;
+  max-height: 60vh;
   background-color: var(--white);
   color: var(--black);
   border: solid 3px var(--black);
@@ -15,6 +16,10 @@
   justify-content: flex-start;
   align-items: center;
   gap: 2vw;
+  overflow-y: scroll;
+}
+.popup::-webkit-scrollbar {
+  display: none;
 }
 
 .button-div {
