@@ -86,6 +86,7 @@ const DivinationsClassic = (props) => {
             <>
               <div
                 onMouseEnter={() => setActive(true)}
+                onTouchStart={() => setActive(true)}
                 className={active ? "cards-wrapper active" : "cards-wrapper"}
               >
                 <div className="card-container">

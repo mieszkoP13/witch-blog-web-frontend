@@ -43,3 +43,11 @@
 .reversed {
   rotate: 180deg;
 }
+@media only screen and (max-width: 600px) {
+  .tarot-card {
+    width: 25vw;
+  }
+  .flip-container {
+    width: 25vw;
+  }
+}

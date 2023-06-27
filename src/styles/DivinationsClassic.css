@@ -9,13 +9,13 @@
 
 .divination-button {
   position: fixed;
-  bottom: 20vh;
+  bottom: 10vh;
 }
 .cards-wrapper.active .card-container:nth-child(1) {
-  transform: translateX(-20vw) translateY(20vh);
+  transform: translateX(-20vw) translateY(10vh);
 }
 .cards-wrapper.active .card-container:nth-child(3) {
-  transform: translateX(20vw) translateY(20vh);
+  transform: translateX(20vw) translateY(10vh);
 }
 
 .divinations-wrapper {
@@ -74,5 +74,19 @@
 @keyframes blinking-text {
   50% {
     color: var(--white);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .cards-wrapper {
+    width: 25vw;
+  }
+  .cards-wrapper.active .card-container:nth-child(1) {
+    transform: translateX(-30vw) translateY(10vh);
+  }
+  .cards-wrapper.active .card-container:nth-child(3) {
+    transform: translateX(30vw) translateY(10vh);
+  }
+  .divination-button {
+    bottom: 20vh;
   }
 }
