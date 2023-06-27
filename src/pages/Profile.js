@@ -32,7 +32,6 @@ const Profile = () => {
 
   useEffect(() => {
     const getData = () => {
-      setLoading(true);
       if (!isToken) {
         const params = new URLSearchParams(window.location.search);
         const query = params.get("token");
@@ -45,6 +44,7 @@ const Profile = () => {
       }
 
       if (isToken) {
+        setLoading(true);
         axios
           .get(`https://witchblog.azurewebsites.net/api/v1/users/me`, {
             headers: {
@@ -71,6 +71,7 @@ const Profile = () => {
     getData();
     return () => {
       setProfile(null);
+      setLoading(false);
     };
   }, [token, isToken, navigate]);
 
@@ -79,6 +80,7 @@ const Profile = () => {
     localStorage.removeItem("roles");
     setProfile(null);
     window.location.reload();
+    setLoading(false);
   };
 
   const findZodiac = (date) => {
