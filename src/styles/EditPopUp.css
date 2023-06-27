@@ -12,7 +12,7 @@
 .input-edit-popup {
   height: 100%;
   width: fit-content;
-  font-size: 2vh;
+  font-size: 1rem;
 }
 
 .btn-edit-popup {
@@ -34,4 +34,16 @@
 }
 .btn-yes {
   margin-left: 1vw;
+}
+@media only screen and (max-width: 600px) {
+  .input-edit-popup {
+    font-size: 0.8rem;
+    max-width: 45%;
+  }
+  .edit-popup {
+    max-width: 90%;
+  }
+  .btn-edit-popup {
+    padding: 5px;
+  }
 }
