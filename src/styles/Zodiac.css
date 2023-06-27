@@ -1,6 +1,6 @@
 .zodiac {
-  height: 10vh;
-  width: 10vh;
+  height: calc(100% - 2vh);
+  width: calc(100% - 2vh);
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
