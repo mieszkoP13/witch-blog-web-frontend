@@ -28,9 +28,11 @@ const Profile = () => {
   const [showPopUpDate, setShowPopUpDate] = useState(false);
   const [zodiac, setZodiac] = useState(null);
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getData = () => {
+      setLoading(true);
       if (!isToken) {
         const params = new URLSearchParams(window.location.search);
         const query = params.get("token");
@@ -50,6 +52,7 @@ const Profile = () => {
             },
           })
           .then((res) => {
+            setLoading(false);
             const date = new Date(res.data.birthDate);
             const stringDate = date.toLocaleString("pl-PL", {
               timeZone: "UTC",
@@ -61,6 +64,7 @@ const Profile = () => {
           .catch((err) => {
             localStorage.removeItem("token");
             console.log(err);
+            setLoading(false);
           });
       }
     };
@@ -114,125 +118,136 @@ const Profile = () => {
 
   return (
     <>
-      {profile ? (
-        <div className="profile-wrapper">
-          <img
-            onClick={handleClick}
-            src={zodiac}
-            className="profile-picture"
-            alt="zodiac"
-          />
-          <div className="right-panel">
-            <div className="profile-it">
-              <span className="profile-it-txt profile-it-txt-left">Email:</span>
-              <span id="email-field" className="profile-it-txt">
-                {profile.email}
-              </span>
-            </div>
-            <div className="profile-it">
-              <span className="profile-it-txt profile-it-txt-left">
-                First Name:
-              </span>
-              {showPopUpFirstName ? (
-                <EditPopUp
-                  setShow={setShowPopUpFirstName}
-                  dataToEdit="firstName"
-                  email={profile.email}
-                  dataValue={profile.firstName}
-                />
-              ) : (
-                <div className="edit-wrap">
-                  <span id="firstName-field" className="profile-it-txt">
-                    {profile.firstName}
-                  </span>
-                  <button
-                    className="btn-edit"
-                    onClick={() => {
-                      setShowPopUpFirstName(true);
-                    }}
-                  >
-                    <i className="fa-solid fa-pen-to-square fa-xl fa-sharp"></i>
-                  </button>
-                </div>
-              )}
-            </div>
-            <div className="profile-it">
-              <span className="profile-it-txt profile-it-txt-left">
-                Last Name:
-              </span>
-              {showPopUpLastName ? (
-                <EditPopUp
-                  setShow={setShowPopUpLastName}
-                  dataToEdit="lastName"
-                  email={profile.email}
-                  dataValue={profile.lastName}
-                />
-              ) : (
-                <div className="edit-wrap">
-                  <span id="lastName-field" className="profile-it-txt">
-                    {profile.lastName}
-                  </span>
-                  <button
-                    className="btn-edit"
-                    onClick={() => {
-                      setShowPopUpLastName(true);
-                    }}
-                  >
-                    <i className="fa-solid fa-pen-to-square fa-xl fa-sharp"></i>
-                  </button>
-                </div>
-              )}
-            </div>
-            <div className="profile-it">
-              <span className="profile-it-txt profile-it-txt-left">
-                Date of Birth:
-              </span>
-              {showPopUpDate ? (
-                <EditPopUp
-                  setShow={setShowPopUpDate}
-                  dataToEdit="birthDate"
-                  email={profile.email}
-                  dataValue={profile.birthDate}
-                />
-              ) : (
-                <div className="edit-wrap">
-                  <span id="birthDate-field" className="profile-it-txt">
-                    {profile.birthDate}
-                  </span>
-                  <button
-                    className="btn-edit"
-                    onClick={() => {
-                      setShowPopUpDate(true);
-                    }}
-                  >
-                    <i className="fa-solid fa-pen-to-square fa-xl fa-sharp"></i>
-                  </button>
-                </div>
-              )}
-            </div>
-            <div className="profile-it">
-              <button className="button-small" onClick={logOut}>
-                Log out
-              </button>
-              <DeleteProfileButton email={profile.email} />
-            </div>
-            <div className="profile-it profile-center">
-              <button className="button-small" onClick={handleClickHistory}>
-                Divinations history
-              </button>
-            </div>
-          </div>
+      {loading ? (
+        <div className="loading-wrapper history-wrapper">
+          <div className="loading-spin"></div>
+          <div className="loading-text">Reading your palms</div>
         </div>
       ) : (
-        <div className="login-wrapper">
-          <Link className="button" to="/SignIn">
-            Sign In
-          </Link>
-          <Link className="button" to="/SignUp">
-            Sign up
-          </Link>
-          <GoogleLoginButton />
-        </div>
+        <>
+          {profile ? (
+            <div className="profile-wrapper">
+              <img
+                onClick={handleClick}
+                src={zodiac}
+                className="profile-picture"
+                alt="zodiac"
+              />
+              <div className="right-panel">
+                <div className="profile-it">
+                  <span className="profile-it-txt profile-it-txt-left">
+                    Email:
+                  </span>
+                  <span id="email-field" className="profile-it-txt">
+                    {profile.email}
+                  </span>
+                </div>
+                <div className="profile-it">
+                  <span className="profile-it-txt profile-it-txt-left">
+                    First Name:
+                  </span>
+                  {showPopUpFirstName ? (
+                    <EditPopUp
+                      setShow={setShowPopUpFirstName}
+                      dataToEdit="firstName"
+                      email={profile.email}
+                      dataValue={profile.firstName}
+                    />
+                  ) : (
+                    <div className="edit-wrap">
+                      <span id="firstName-field" className="profile-it-txt">
+                        {profile.firstName}
+                      </span>
+                      <button
+                        className="btn-edit"
+                        onClick={() => {
+                          setShowPopUpFirstName(true);
+                        }}
+                      >
+                        <i className="fa-solid fa-pen-to-square fa-xl fa-sharp"></i>
+                      </button>
+                    </div>
+                  )}
+                </div>
+                <div className="profile-it">
+                  <span className="profile-it-txt profile-it-txt-left">
+                    Last Name:
+                  </span>
+                  {showPopUpLastName ? (
+                    <EditPopUp
+                      setShow={setShowPopUpLastName}
+                      dataToEdit="lastName"
+                      email={profile.email}
+                      dataValue={profile.lastName}
+                    />
+                  ) : (
+                    <div className="edit-wrap">
+                      <span id="lastName-field" className="profile-it-txt">
+                        {profile.lastName}
+                      </span>
+                      <button
+                        className="btn-edit"
+                        onClick={() => {
+                          setShowPopUpLastName(true);
+                        }}
+                      >
+                        <i className="fa-solid fa-pen-to-square fa-xl fa-sharp"></i>
+                      </button>
+                    </div>
+                  )}
+                </div>
+                <div className="profile-it">
+                  <span className="profile-it-txt profile-it-txt-left">
+                    Date of Birth:
+                  </span>
+                  {showPopUpDate ? (
+                    <EditPopUp
+                      setShow={setShowPopUpDate}
+                      dataToEdit="birthDate"
+                      email={profile.email}
+                      dataValue={profile.birthDate}
+                    />
+                  ) : (
+                    <div className="edit-wrap">
+                      <span id="birthDate-field" className="profile-it-txt">
+                        {profile.birthDate}
+                      </span>
+                      <button
+                        className="btn-edit"
+                        onClick={() => {
+                          setShowPopUpDate(true);
+                        }}
+                      >
+                        <i className="fa-solid fa-pen-to-square fa-xl fa-sharp"></i>
+                      </button>
+                    </div>
+                  )}
+                </div>
+                <div className="profile-it">
+                  <button className="button-small" onClick={logOut}>
+                    Log out
+                  </button>
+                  <DeleteProfileButton email={profile.email} />
+                </div>
+                <div className="profile-it profile-center">
+                  <button className="button-small" onClick={handleClickHistory}>
+                    Divinations history
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="login-wrapper">
+              <Link className="button" to="/SignIn">
+                Sign In
+              </Link>
+              <Link className="button" to="/SignUp">
+                Sign up
+              </Link>
+              <GoogleLoginButton />
+            </div>
+          )}
+        </>
       )}
     </>
   );
