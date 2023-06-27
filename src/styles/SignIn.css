@@ -89,3 +89,25 @@ h2 {
     transform: rotate(360deg);
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  input {
+    width: 60vw;
+    font-size: 1rem;
+  }
+  .form-item {
+    height: fit-content;
+  }
+  .wrap-sign-in {
+    height: 60vh;
+    gap: 0rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .btn-sign-in {
+    margin-top: 0;
+  }
+}

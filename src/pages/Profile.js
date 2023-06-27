@@ -124,13 +124,15 @@ const Profile = () => {
           />
           <div className="right-panel">
             <div className="profile-it">
-              <span className="profile-it-txt">Email:</span>
+              <span className="profile-it-txt profile-it-txt-left">Email:</span>
               <span id="email-field" className="profile-it-txt">
                 {profile.email}
               </span>
             </div>
             <div className="profile-it">
-              <span className="profile-it-txt">First Name:</span>
+              <span className="profile-it-txt profile-it-txt-left">
+                First Name:
+              </span>
               {showPopUpFirstName ? (
                 <EditPopUp
                   setShow={setShowPopUpFirstName}
@@ -155,7 +157,9 @@ const Profile = () => {
               )}
             </div>
             <div className="profile-it">
-              <span className="profile-it-txt">Last Name:</span>
+              <span className="profile-it-txt profile-it-txt-left">
+                Last Name:
+              </span>
               {showPopUpLastName ? (
                 <EditPopUp
                   setShow={setShowPopUpLastName}
@@ -180,7 +184,9 @@ const Profile = () => {
               )}
             </div>
             <div className="profile-it">
-              <span className="profile-it-txt">Date of Birth:</span>
+              <span className="profile-it-txt profile-it-txt-left">
+                Date of Birth:
+              </span>
               {showPopUpDate ? (
                 <EditPopUp
                   setShow={setShowPopUpDate}
