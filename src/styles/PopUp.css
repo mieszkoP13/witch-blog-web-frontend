@@ -41,3 +41,22 @@
   color: var(--white);
   background-color: var(--black);
 }
+
+@media only screen and (max-width: 600px) {
+  .popup-button {
+    width: 40%;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0;
+    min-height: 3em;
+  }
+  .button-div {
+    width: 90%;
+  }
+  .popup {
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+}
