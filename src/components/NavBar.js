@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/NavBar.css";
 import facebookLogoLight from "../imgs/light/facebook_logo.png";
+import androidLogoLight from "../imgs/light/android.png";
 
 const NavBar = () => {
   const [bottomActive, setBottomActive] = useState(false);
@@ -97,6 +98,15 @@ const NavBar = () => {
             className="logo"
             width="50"
             height="50"
+          />
+        </a>
+        <a className="social-link" href=".">
+          <img
+            src={androidLogoLight}
+            alt="android logo"
+            className="logo"
+            width="35"
+            height="35"
           />
         </a>
       </div>

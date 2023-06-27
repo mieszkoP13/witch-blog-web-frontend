@@ -123,6 +123,7 @@ li {
   flex-direction: row;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  gap: 30px;
 }
 
 .open-socials {
