@@ -45,6 +45,7 @@
 @media only screen and (max-width: 600px) {
   .history-prediction {
     font-size: 1rem;
+    text-align: center;
   }
   .history-container {
     flex-direction: column;
