@@ -2,7 +2,7 @@
   width: 60vw;
   height: fit-content;
   position: fixed;
-  left: 20vw;
+  left: 18vw;
   top: 20vh;
   max-height: 60vh;
   background-color: var(--white);
@@ -60,6 +60,8 @@
   }
   .popup {
     font-size: 1rem;
+    width: 80vw;
+    left: 8vw;
   }
   h1 {
     font-size: 1.2rem;
