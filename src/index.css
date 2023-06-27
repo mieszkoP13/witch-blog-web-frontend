@@ -46,3 +46,6 @@ html {
   max-height: 100%;
   overflow: hidden;
 }
+html {
+  font-size: 100%;
+}
