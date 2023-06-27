@@ -42,3 +42,18 @@
   font-weight: bold;
   font-size: x-large;
 }
+@media only screen and (max-width: 600px) {
+  .history-prediction {
+    font-size: 1rem;
+  }
+  .history-container {
+    flex-direction: column;
+  }
+  .history-card-and-name-container {
+    width: 33%;
+    font-size: 0.8rem;
+  }
+  .history-single-card-container {
+    width: 100%;
+  }
+}
