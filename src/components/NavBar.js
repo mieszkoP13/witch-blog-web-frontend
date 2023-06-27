@@ -56,6 +56,8 @@ const NavBar = () => {
           <li>
             <div
               onClick={handleClick}
+              onTouchStart={() => setTopActive(true)}
+              onTouchEnd={() => setTopActive(false)}
               onMouseEnter={() => setTopActive(true)}
               onMouseLeave={() => setTopActive(false)}
               className={

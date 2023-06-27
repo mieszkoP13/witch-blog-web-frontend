@@ -15,6 +15,8 @@ const Home = () => {
         onClick={handleClick}
         onMouseEnter={() => setActive(true)}
         onMouseLeave={() => setActive(false)}
+        onTouchStart={() => setActive(true)}
+        onTouchEnd={() => setActive(false)}
         className={active ? "center active" : "center"}
       ></div>
     </>
