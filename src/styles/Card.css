@@ -3,7 +3,7 @@
   aspect-ratio: 469/850;
   position: absolute;
   top: 0;
-  object-fit: cover;
+  object-fit: contain;
   cursor: pointer;
   margin: 0;
   padding: 0;
