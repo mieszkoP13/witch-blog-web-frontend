@@ -1,7 +1,9 @@
 import React from "react";
 import "../styles/PopUp.css";
+import { useNavigate } from "react-router-dom";
 
 const PopUp = (props) => {
+  const navigate = useNavigate();
   const customFunction = () => {
     if (props.customFunction) {
       props.customFunction();
@@ -16,7 +18,12 @@ const PopUp = (props) => {
         <button className="popup-button" onClick={customFunction}>
           Ok
         </button>
-        <button className="popup-button" onClick={() => props.setShow(false)}>
+        <button
+          className="popup-button"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
           Cancel
         </button>
       </div>

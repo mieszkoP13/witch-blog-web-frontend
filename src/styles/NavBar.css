@@ -129,3 +129,13 @@ li {
 .open-socials {
   transform: translateY(-80px);
 }
+
+@media only screen and (max-width: 600px) {
+  .socials {
+    bottom: -60px;
+    height: 60px;
+  }
+  .open-socials {
+    transform: translateY(-60px);
+  }
+}

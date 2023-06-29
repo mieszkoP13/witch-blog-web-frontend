@@ -135,14 +135,16 @@ const DivinationsClassic = (props) => {
       ) : (
         <>
           {logReveal ? (
-            <PopUp
-              setShow={setLogReveal}
-              customFunction={() => navigate("/users/profile")}
-            >
-              <h2 className="meaning-h2">
-                You need to be logged in to access this page
-              </h2>
-            </PopUp>
+            <>
+              <PopUp
+                setShow={setLogReveal}
+                customFunction={() => navigate("/users/profile")}
+              >
+                <h2 className="meaning-h2">
+                  You need to be logged in to access this page
+                </h2>
+              </PopUp>
+            </>
           ) : (
             <></>
           )}
