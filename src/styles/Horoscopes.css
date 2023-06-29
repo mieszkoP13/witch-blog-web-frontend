@@ -1,11 +1,12 @@
 .zodiac-div {
-  height: 5rem;
-  width: 5rem;
+  height: 6rem;
+  width: 6rem;
   margin: 0.1rem;
-  padding: 0;
+  padding: 0.1rem;
 }
 .box-horoscope {
-  width: 25rem;
+  width: 32rem;
+  padding: 1rem;
   max-width: 90vw;
   height: auto;
   display: flex;
@@ -42,5 +43,15 @@
   50% {
     border-color: var(--white);
     color: var(--white);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .zodiac-div {
+    height: 5rem;
+    width: 5rem;
+  }
+  .box-horoscope {
+    width: 25rem;
   }
 }
