@@ -100,7 +100,7 @@ const NavBar = () => {
             height="50"
           />
         </a>
-        <a className="social-link" href=".">
+        <a className="social-link" href="https://drive.google.com/file/d/1ZXYzLjNNgmrvWKgITIRV3-dlkDt22Ukr/view">
           <img
             src={androidLogoLight}
             alt="android logo"
